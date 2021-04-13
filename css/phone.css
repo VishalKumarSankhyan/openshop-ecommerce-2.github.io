@@ -369,6 +369,16 @@ Collection Media Query
     .containe {
         flex-direction: column;
     }
+
+    .comment-2.open{
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+
+    .search1.open{
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
     
 }
 @media(max-width:899px){ 
