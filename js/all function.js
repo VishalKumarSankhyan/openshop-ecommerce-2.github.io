@@ -91,6 +91,8 @@ menuBtn2 = document.querySelector('.menu-btn');
 
 menuBtn3 = document.querySelector('body');
 
+menu_scroll_top = document.querySelector('.l-navbar-2');
+
 
 
 // side navbar burger
@@ -115,6 +117,10 @@ burger1.addEventListener('click', () => {
         menuBtn2.classList.remove('fade_show');
     },1100)
 
+    // menu_scroll_bar_top 
+    menu_scroll_top.scrollTop = 0;  
+    menu_scroll_top.scrollTop = 0;
+
 });
 // close nav burger
 burger2.addEventListener('click', () => {
@@ -129,6 +135,10 @@ burger2.addEventListener('click', () => {
     setTimeout(function(){
         menuBtn2.classList.remove('fade_show');
     },1100)
+
+    // menu_scroll_bar_top 
+    menu_scroll_top.scrollTop = 0;  
+    menu_scroll_top.scrollTop = 0;
 
 });
 // small nav bar burger
@@ -150,6 +160,8 @@ menun6 = document.querySelector('.main-nav-1');
 menun7 = document.querySelector('body');
 menun8 = document.querySelector('.can1 svg');
 
+search_input = document.querySelector('.comment-2');
+search_btn = document.querySelector('.search1');
 
 window.onscroll = function () { scrollFuncion() };
 
@@ -164,6 +176,10 @@ function scrollFuncion() {
         menun6.classList.add('open');
         menun8.classList.add('open');
 
+        menun4.classList.add('navbar_sh');
+        search_input.classList.add('open');
+        search_btn.classList.add('open');
+
     }
     else {
         //mybutton.style.display = "none";
@@ -174,6 +190,10 @@ function scrollFuncion() {
         menun5.classList.remove('open');
         menun6.classList.remove('open');
         menun8.classList.remove('open');
+
+        menun4.classList.remove('navbar_sh');
+        search_input.classList.remove('open');
+        search_btn.classList.remove('open');
     
     }
 }
@@ -383,6 +403,10 @@ function slideright1() {
         slidess1 = -750;
         getslide1.style.transform = "translateX(" + slidess1 + "px)";
         getslide1.classList.add('right_scroll_stop');
+
+        setTimeout(function(){
+            getslide1.classList.remove('right_scroll_stop');
+        },1000)
         
     }
     else{
@@ -390,13 +414,16 @@ function slideright1() {
         getslide1.style.transform = "translateX(" + slidess1 + "px)";
        
     }
-    getTranslate()
 }
 
 function slideleft1() {
     if (slidess1 == 0) {
         getslide1.style.transform = "translateX(" + 0 + "px)";
         getslide1.classList.add('left_scroll_stop');
+
+        setTimeout(function(){
+            getslide1.classList.remove('left_scroll_stop');
+        },1000)
     }
    
     else {
@@ -404,7 +431,6 @@ function slideleft1() {
         getslide1.style.transform = "translateX(" + slidess1 + "px)";
         
     }
-    getTranslate()
 }
 
 /*2*/
@@ -417,6 +443,10 @@ function slideright2() {
         slidess2 = -750;
         getslide2.style.transform = "translateX(" + slidess2 + "px)";
         getslide2.classList.add('right_scroll_stop');
+
+        setTimeout(function(){
+            getslide2.classList.remove('right_scroll_stop');
+        },1000)
     }
     else{
         slidess2 = slidess2 - 375;
@@ -428,6 +458,10 @@ function slideleft2() {
     if (slidess2 == 0) {
         getslide2.style.transform = "translateX(" + 0 + "px)";
         getslide2.classList.add('left_scroll_stop');
+
+        setTimeout(function(){
+            getslide2.classList.remove('left_scroll_stop');
+        },1000)
     }
    
     else {
@@ -449,6 +483,9 @@ function slideright3(){
         slidess3 = -750;
         getslide3.style.transform = "translateX(" + slidess3 + "px)";
         getslide3.classList.add('right_scroll_stop');
+        setTimeout(function(){
+            getslide3.classList.remove('right_scroll_stop');
+        },1000)
         
     }
     else{
@@ -462,6 +499,9 @@ function slideleft3(){
     if (slidess3 == 0) {
         getslide3.style.transform = "translateX(" + 0 + "px)";
         getslide3.classList.add('left_scroll_stop');
+        setTimeout(function(){
+            getslide3.classList.remove('left_scroll_stop');
+        },1000)
     }
    
     else {
@@ -483,6 +523,9 @@ function slideright4(){
         slidess4 = -750;
         getslide4.style.transform = "translateX(" + slidess4 + "px)";
         getslide4.classList.add('right_scroll_stop');
+        setTimeout(function(){
+            getslide4.classList.remove('right_scroll_stop');
+        },1000)
         
     }
     else{
@@ -495,6 +538,10 @@ function slideright4(){
 function slideleft4(){
     if (slidess4 == 0) {
         getslide4.style.transform = "translateX(" + 0 + "px)";
+        getslide4.classList.add('left_scroll_stop');
+        setTimeout(function(){
+            getslide4.classList.remove('left_scroll_stop');
+        },1000)
     }
    
     else {
@@ -516,6 +563,9 @@ function slideright5(){
         slidess5 = -750;
         getslide5.style.transform = "translateX(" + slidess5 + "px)";
         getslide5.classList.add('right_scroll_stop');
+        setTimeout(function(){
+            getslide5.classList.remove('right_scroll_stop');
+        },1000)
         
     }
     else{
@@ -528,6 +578,10 @@ function slideright5(){
 function slideleft5(){
     if (slidess5 == 0) {
         getslide5.style.transform = "translateX(" + 0 + "px)";
+        getslide5.classList.add('left_scroll_stop');
+        setTimeout(function(){
+            getslide5.classList.remove('left_scroll_stop');
+        },1000)
     }
    
     else {
@@ -551,6 +605,9 @@ function slideright6(){
         slidess6 = -750;
         getslide6.style.transform = "translateX(" + slidess6 + "px)";
         getslide6.classList.add('right_scroll_stop');
+        setTimeout(function(){
+            getslide6.classList.remove('right_scroll_stop');
+        },1000)
         
     }
     else{
@@ -564,6 +621,9 @@ function slideleft6(){
     if (slidess6 == 0) {
         getslide6.style.transform = "translateX(" + 0 + "px)";
         getslide6.classList.add('left_scroll_stop');
+        setTimeout(function(){
+            getslide6.classList.remove('left_scroll_stop');
+        },1000)
     }
    
     else {
@@ -587,6 +647,9 @@ function slideright7(){
         slidess7 = -750;
         getslide7.style.transform = "translateX(" + slidess7 + "px)";
         getslide7.classList.add('right_scroll_stop');
+        setTimeout(function(){
+            getslide7.classList.remove('right_scroll_stop');
+        },1000)
         
     }
     else{
@@ -600,6 +663,9 @@ function slideleft7(){
     if (slidess7 == 0) {
         getslide7.style.transform = "translateX(" + 0 + "px)";
         getslide7.classList.add('left_scroll_stop');
+        setTimeout(function(){
+            getslide7.classList.remove('left_scroll_stop');
+        },1000)
     }
    
     else {
@@ -623,6 +689,9 @@ function slideright8(){
         slidess8 = -750;
         getslide8.style.transform = "translateX(" + slidess8 + "px)";
         getslide8.classList.add('right_scroll_stop');
+        setTimeout(function(){
+            getslide8.classList.remove('right_scroll_stop');
+        },1000)
         
     }
     else{
@@ -636,6 +705,9 @@ function slideleft8(){
     if (slidess8 == 0) {
         getslide8.style.transform = "translateX(" + 0 + "px)";
         getslide8.classList.add('left_scroll_stop');
+        setTimeout(function(){
+            getslide8.classList.remove('left_scroll_stop');
+        },1000)
     }
    
     else {
@@ -658,6 +730,9 @@ function slideright9(){
         slidess9 = -750;
         getslide9.style.transform = "translateX(" + slidess9 + "px)";
         getslide9.classList.add('right_scroll_stop');
+        setTimeout(function(){
+            getslide9.classList.remove('right_scroll_stop');
+        },1000)
         
     }
     else{
@@ -671,6 +746,9 @@ function slideleft9(){
     if (slidess9 == 0) {
         getslide9.style.transform = "translateX(" + 0 + "px)";
         getslide9.classList.add('left_scroll_stop');
+        setTimeout(function(){
+            getslide9.classList.remove('left_scroll_stop');
+        },1000)
     }
    
     else {
@@ -693,6 +771,9 @@ function slideright10(){
         slidess10 = -750;
         getslide10.style.transform = "translateX(" + slidess10 + "px)";
         getslide10.classList.add('right_scroll_stop');
+        setTimeout(function(){
+            getslide10.classList.remove('right_scroll_stop');
+        },1000)
         
     }
     else{
@@ -706,6 +787,9 @@ function slideleft10(){
     if (slidess10 == 0) {
         getslide10.style.transform = "translateX(" + 0 + "px)";
         getslide10.classList.add('left_scroll_stop');
+        setTimeout(function(){
+            getslide10.classList.remove('left_scroll_stop');
+        },1000)
     }
    
     else {
@@ -883,6 +967,10 @@ window.onload = function () {
         setTimeout(function(){
             menuBtn2.classList.remove('fade_show');
         },1100)
+
+        // menu_scroll_bar_top 
+        menu_scroll_top.scrollTop = 0;  
+        menu_scroll_top.scrollTop = 0;
     });
 
     menuBtn.addEventListener('swiped-left', function (e) {
@@ -896,6 +984,10 @@ window.onload = function () {
         setTimeout(function(){
             menuBtn2.classList.remove('fade_show');
         },1100)
+
+        // menu_scroll_bar_top 
+        menu_scroll_top.scrollTop = 0;  
+        menu_scroll_top.scrollTop = 0;
     });
 
 }
