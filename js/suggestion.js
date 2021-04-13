@@ -202,7 +202,7 @@ function autocomplete(inp, arr) {
           if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
               if (device_width_ch.matches) {
               a.style.marginLeft="48px";
-              a.style.marginRight="36px";
+              a.style.marginRight="36.5px";
 
 
               //mybutton.style.display = "block";
@@ -213,6 +213,10 @@ function autocomplete(inp, arr) {
               menun5.classList.add('open');
               menun6.classList.add('open');
               menun8.classList.add('open');
+
+              menun4.classList.add('navbar_sh');
+              search_input.classList.add('open');
+              search_btn.classList.add('open');
             }
             else{
               return 0;
@@ -234,6 +238,9 @@ function autocomplete(inp, arr) {
             menun6.classList.remove('open');
             menun8.classList.remove('open');
 
+            menun4.classList.remove('navbar_sh');
+            search_input.classList.remove('open');
+            search_btn.classList.remove('open');
           }
         }
         /*---change css with on scroll end---*/
