@@ -63,10 +63,14 @@ p{
 }
 .navbar {
     padding: 0rem 0rem;
-    transition: transform 0.5s cubic-bezier(0, 0, 0.3, 1) 0s;
     max-width: 2000px;
     min-width: 230px;
     margin: auto;
+}
+
+.navbar.navbar_sh{
+    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 30%);
+    /*transition-duration:0.2s;*/
 }
 
 .navbar-container{
@@ -104,7 +108,7 @@ p{
     right: 0;
     opacity: 2.9;
     z-index: -1;
-    background: linear-gradient(to right ,#15c9f6 0% ,#15c9f6 0% , #15c9f6 100%);
+    background: linear-gradient(to right ,#00ccff 0% ,#00ccff 0% , #00ccff 100%);
 }
 .input-group-append input {
     color: black;
@@ -234,9 +238,10 @@ p{
 }
 .comment-2{
     border-right: 0px solid;
-    border: none;
+    border:none;
     z-index: 99999!important;
 }
+
 
 /*burger start*/
 .burger{
@@ -399,10 +404,12 @@ p{
 .nav-item2{
     font-size: 20px;
     background: linear-gradient(to right ,#15c9f6 0% ,#15c9f6 0% , #15c9f6 100%);
+    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 15%);
 }
+
 .l-navbar-2{
     height: 100vh;
-    overflow-x: scroll;
+    overflow: scroll;
     white-space: nowrap;
     padding-bottom: 30px;
 }
@@ -578,13 +585,11 @@ yt-img-shadow {
     bottom: 0px;
     right: 0px;
     z-index:9999;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     border: none;
     color: #fff;
-    background-color:rgba(0,0,0,0.6);
-    padding: 10px;
-    font-size: 18px;
+    background-color:rgba(0, 0, 0, 0.550);
     cursor: pointer;  
 }
 
@@ -596,6 +601,7 @@ yt-img-shadow {
     0%{
         opacity: 1;
     }
+    
     100%{
         opacity: 0;
     }
@@ -1981,7 +1987,7 @@ hide scroll bar but not functionality
 
 /*left right sroll stop animation start*/
 .product-show-slider-main-center2.left_scroll_stop{
-    animation: left_scroll_stop 1s;
+    animation: left_scroll_stop 1.2s;
 }
 @keyframes left_scroll_stop{
 
@@ -1996,7 +2002,7 @@ hide scroll bar but not functionality
 }
 
 .product-show-slider-main-center2.right_scroll_stop{
-    animation: right_scroll_stop 1s;
+    animation: right_scroll_stop 1.2s;
 }
 @keyframes right_scroll_stop{
 
