@@ -2171,3 +2171,99 @@ hide scroll bar but not functionality
     color:#15c9f6;
 }
 /*navgation btn end*/
+
+.footer_section{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.page_top_btn{
+    text-align: center;
+    color:#fff;
+    background-color:black;
+    width: 100%;
+    outline: none;
+    border: none;
+    white-space: nowrap;
+    font-size: 18px;
+    padding: 2px 0px;
+}
+
+.page_top_btn:focus{
+    outline: none;
+    border: none;
+}
+
+.footer_div_section{
+    display: flex;
+    padding: 5px 0px;
+    background: linear-gradient(to top ,#1a95b4 0% ,#15c9f6 0% , #096b83 100%);
+}
+
+.footer_sub_container{
+    display: flex;
+    flex-direction: column;
+    max-width: 10000px;
+    width: 100%;
+    padding: 20px 0px;
+}
+
+.nav_link_div{
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    padding: 10px 0px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.nav_link_div:hover{
+    color: #fff;
+    text-shadow: 0 2px 5px rgb(0 0 0 / 40%);
+}
+
+.nav_link_login{
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    padding: 5px 0px;
+    color: #fff;
+    font-size: 25px;
+    height: 40px;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+}
+
+.nav_link_login:hover{
+    color: #fff;
+    text-shadow: 0 2px 5px rgb(0 0 0 / 40%);
+}
+
+
+.footer_last_container{
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.copy_right_footer{
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(to top ,#021114 0% , #021114 0% , #021114 100%);
+    color: white;
+    padding: 10px 0px;
+}
+
+
+.footer_sub_container_box{
+    display: flex;
+    flex-direction: column;
+}
