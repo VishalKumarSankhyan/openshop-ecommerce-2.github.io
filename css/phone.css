@@ -249,13 +249,13 @@ Collection Media Query
     }
 
     .navbar.animation_1{
-        animation: nav_menu1 0.2s;
+        animation: nav_menu1 0.1s;
     }
 
     
     @keyframes nav_menu1{
         0%{
-            transform: translate3d(0px, -30px, 0px);
+            transform: translate3d(0px, -25px, 0px);
         }
         100%{
             transform: translate3d(0px, 0px, 0px);
