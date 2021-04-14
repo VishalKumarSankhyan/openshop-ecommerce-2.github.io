@@ -177,7 +177,7 @@ Collection Media Query
     }
 }
 
-@media(max-width:991px){
+@media(max-width:992px){
     .burger{
         display:block!important; 
     }
@@ -207,6 +207,14 @@ Collection Media Query
     }
     .container {
         max-width: 950px;
+    }
+
+    .col-lg-6 {
+        max-width: 100%!important;
+    }
+
+    #navbarSupportedContent{
+        display: none!important;
     }
     
     body.open{
@@ -414,6 +422,37 @@ Collection Media Query
     .l-navbar{
         display: block!important;
     }
+
+    .footer_div_section {
+        flex-direction: column;
+    }
+
+    .footer_sub_container_box{
+        flex-direction: row!important;
+    }
+
+    
+    .footer_sub_container {
+        padding: 0px!important;
+    }
+
+    .footer_last_container {
+        margin-top: 20px;
+    }
+
+    .footer_div_section {
+        padding-top: 20px;
+    }
+
+    .copy_right_footer{
+        padding: 0px!important;
+        padding-top: 25px!important;
+        padding-bottom: 10px!important;
+    }
+
+    .footer_div_section{
+        padding-bottom: 35px!important;
+    }
     
 }
 @media(max-width:899px){ 
@@ -511,6 +550,23 @@ Collection Media Query
         font-size: 13px!important;
         
     }
+
+    .nav_link_login {
+        font-size: 23px !important;
+    }
+
+    .copy_right_footer a{
+        font-size: 14px !important;
+        padding: 0px 10px;
+    }
+
+    .nav_link_div{
+        font-size: 16px !important;
+    }
+
+    .page_top_btn{
+        font-size: 16px !important;
+    }
     
 }
 
@@ -602,6 +658,14 @@ Collection Media Query
     }
     .btn-navigate {
         font-size: 10px!important;
+    }
+
+    .nav_link_login {
+        font-size: 20px !important;
+    }
+
+    .page_top_btn {
+        font-size: 15px !important;
     }
 }
 
@@ -725,6 +789,19 @@ Collection Media Query
     .b-1{
         padding: 2px 10px!important;
     }
+
+    .nav_link_div {
+        font-size: 14px !important;
+    }
+
+    .nav_link_login {
+        font-size: 18px !important;
+    }
+
+    .page_top_btn {
+        font-size: 13px !important;
+    }
+
     
 }
 
