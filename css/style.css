@@ -2198,7 +2198,7 @@ hide scroll bar but not functionality
 .footer_div_section{
     display: flex;
     padding: 5px 0px;
-    background: linear-gradient(to top ,#1a95b4 0% ,#15c9f6 0% , #096b83 100%);
+    background: linear-gradient(to right ,#00ccff 0% ,#00ccff 0% , #00ccff 100%);
 }
 
 .footer_sub_container{
@@ -2267,4 +2267,3 @@ hide scroll bar but not functionality
     display: flex;
     flex-direction: column;
 }
-
