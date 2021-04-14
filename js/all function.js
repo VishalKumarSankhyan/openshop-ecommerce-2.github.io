@@ -180,6 +180,8 @@ function scrollFuncion() {
         search_input.classList.add('open');
         search_btn.classList.add('open');
 
+        menun4.classList.add('animation_1');
+
     }
     else {
         //mybutton.style.display = "none";
@@ -194,7 +196,7 @@ function scrollFuncion() {
         menun4.classList.remove('navbar_sh');
         search_input.classList.remove('open');
         search_btn.classList.remove('open');
-    
+        
     }
 }
 //top scroll start
