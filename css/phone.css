@@ -446,12 +446,12 @@ Collection Media Query
 
     .copy_right_footer{
         padding: 0px!important;
-        padding-top: 25px!important;
+        padding-top: 10px!important;
         padding-bottom: 10px!important;
     }
 
     .footer_div_section{
-        padding-bottom: 35px!important;
+        padding-bottom: 30px!important;
     }
     
 }
@@ -1103,4 +1103,3 @@ Collection Media Query
     /*175*/
     
 }
-
