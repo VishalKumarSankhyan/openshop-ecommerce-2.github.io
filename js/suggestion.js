@@ -217,6 +217,8 @@ function autocomplete(inp, arr) {
               menun4.classList.add('navbar_sh');
               search_input.classList.add('open');
               search_btn.classList.add('open');
+
+              menun4.classList.add('animation_1');
             }
             else{
               return 0;
@@ -307,4 +309,3 @@ function autocomplete(inp, arr) {
     closeAllLists(e.target);
   });
 }
-
