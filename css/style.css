@@ -66,6 +66,10 @@ p{
     max-width: 2000px;
     min-width: 230px;
     margin: auto;
+
+    will-change: transform;
+    transition: transform 0.2s cubic-bezier(0, 0, 0.3, 1) 0s;
+    background: linear-gradient(to right ,#15c9f6 0% ,#15c9f6 0% , #15c9f6 100%);
 }
 
 .navbar.navbar_sh{
@@ -134,7 +138,7 @@ p{
 }
 .search1{
     color: #15c9f6;
-    background: white;
+    background: white!important;
     font-size: 20px;
     border-left: 0px solid;
     border: none;
@@ -220,7 +224,7 @@ p{
     position: absolute;
     right: 40px;
     top: 3px;
-    background-color: #fFFF!important;
+    background-color: white!important;
 }
 
 .can1{
@@ -240,6 +244,7 @@ p{
     border-right: 0px solid;
     border:none;
     z-index: 99999!important;
+    background: white!important;
 }
 
 
@@ -387,6 +392,7 @@ p{
     transition: transform .25s ease-out;
     transition: transform .25s ease-out,-webkit-transform .25s ease-out;
     */
+    display: none;
     will-change: transform;
     transition: transform 0.4s cubic-bezier(0, 0, 0.3, 1) 0s;
     transform: translate3d(-102%,0,0);
