@@ -211,6 +211,7 @@ Collection Media Query
     
     body.open{
         overflow: hidden!important;
+        overflow-y: hidden!important;
     }
    
     .l-navbar.open{
@@ -245,6 +246,20 @@ Collection Media Query
     }
     .navbar.open1{
         padding: .5rem 1rem!important;
+    }
+
+    .navbar.animation_1{
+        animation: nav_menu1 0.2s;
+    }
+
+    
+    @keyframes nav_menu1{
+        0%{
+            transform: translate3d(0px, -30px, 0px);
+        }
+        100%{
+            transform: translate3d(0px, 0px, 0px);
+        }
     }
 
     .burger-1.open{
@@ -378,6 +393,26 @@ Collection Media Query
     .search1.open{
         margin-top: 1px;
         margin-bottom: 1px;
+    }
+
+
+    
+    .navbar.navbar_sh{
+        animation: nav_menu 0.5s;
+    }
+
+
+    @keyframes nav_menu{
+        0%{
+            transform: translate3d(0px, -50px, 0px);
+        }
+        100%{
+            transform: translate3d(0px, 0px, 0px);
+        }
+    }
+
+    .l-navbar{
+        display: block!important;
     }
     
 }
