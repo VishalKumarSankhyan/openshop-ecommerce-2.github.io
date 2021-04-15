@@ -423,6 +423,8 @@ Collection Media Query
         display: block!important;
     }
 
+    /*----footer section start----*/
+
     .footer_div_section {
         flex-direction: column;
     }
@@ -437,22 +439,43 @@ Collection Media Query
     }
 
     .footer_last_container {
-        margin-top: 20px;
+        margin-top: 50px;
     }
 
     .footer_div_section {
         padding-top: 20px;
     }
 
-    .copy_right_footer{
-        padding: 0px!important;
-        padding-top: 10px!important;
-        padding-bottom: 10px!important;
-    }
 
     .footer_div_section{
         padding-bottom: 30px!important;
     }
+
+    .nav_link_login{
+        margin-bottom: 5px!important;
+    }
+
+    .social_icon_container{
+        left: 0!important;
+        right: 0!important;
+        top: unset!important;
+        margin: 0px !important;
+        margin-right: 150px!important;
+    }
+
+    .app_icon_container{
+        right: 0!important;
+        left: 0!important;
+        bottom: unset!important;
+        margin: 0px !important;
+        margin-left: 150px!important;
+    }
+
+    .copy_right_footer{
+        padding: 10px!important;
+    }
+
+    /*----footer section end----*/
     
 }
 @media(max-width:899px){ 
@@ -557,7 +580,7 @@ Collection Media Query
 
     .copy_right_footer a{
         font-size: 14px !important;
-        padding: 0px 10px;
+        padding: 0px;
     }
 
     .nav_link_div{
@@ -593,6 +616,18 @@ Collection Media Query
 
     .image-m {
         width: 120px!important;
+    }
+
+    .social_icon_container{
+        margin-right: 125px!important;
+    }
+
+    .app_icon_container{
+        margin-left: 125px!important;
+    }
+
+    .social_icon{
+        font-size: 28!important;
     }
 }
 
@@ -660,6 +695,8 @@ Collection Media Query
         font-size: 10px!important;
     }
 
+    /*----footer section start----*/
+
     .nav_link_login {
         font-size: 20px !important;
     }
@@ -667,6 +704,11 @@ Collection Media Query
     .page_top_btn {
         font-size: 15px !important;
     }
+
+    .social_icon{
+        font-size: 25px!important;
+    }
+    /*----footer section end----*/
 }
 
 @media(max-width:374px){ 
@@ -735,6 +777,12 @@ Collection Media Query
         border-radius: 10px!important;
         font-size: 16px!important;
     }
+
+    /*----footer section start----*/
+    .social_icon{
+        font-size: 23px!important;
+    }
+    /*----footer section end----*/
 }
 
 @media(max-width:339px){ 
@@ -789,7 +837,7 @@ Collection Media Query
     .b-1{
         padding: 2px 10px!important;
     }
-
+    /*----footer section start----*/
     .nav_link_div {
         font-size: 14px !important;
     }
@@ -802,7 +850,8 @@ Collection Media Query
         font-size: 13px !important;
     }
 
-    
+    /*----footer section end----*/
+  
 }
 
 @media(max-width:299px){ 
@@ -929,6 +978,12 @@ Collection Media Query
     p {
         font-size: 0.8rem!important;
     }
+
+    /*----footer section start----*/
+    .social_icon{
+        font-size: 20px!important;
+    }
+    /*----footer section end----*/
 }
 @media(max-width:289px){ 
     .menu-btn_burger{
