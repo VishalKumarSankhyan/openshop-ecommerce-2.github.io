@@ -2172,6 +2172,9 @@ hide scroll bar but not functionality
 }
 /*navgation btn end*/
 
+
+/*----footer section start----*/
+
 .footer_section{
     display: flex;
     flex-direction: column;
@@ -2181,7 +2184,7 @@ hide scroll bar but not functionality
 .page_top_btn{
     text-align: center;
     color:#fff;
-    background-color:black;
+    background-color:#00ccff;
     width: 100%;
     outline: none;
     border: none;
@@ -2198,7 +2201,7 @@ hide scroll bar but not functionality
 .footer_div_section{
     display: flex;
     padding: 5px 0px;
-    background: linear-gradient(to right ,#00ccff 0% ,#00ccff 0% , #00ccff 100%);
+    background: linear-gradient(to top ,#021114 0% , #021114 0% , #021114 100%);
 }
 
 .footer_sub_container{
@@ -2208,6 +2211,19 @@ hide scroll bar but not functionality
     width: 100%;
     padding: 20px 0px;
 }
+
+.footer_sub_container_box{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_last_container{
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
 
 .nav_link_div{
     max-width: 1000px;
@@ -2220,7 +2236,7 @@ hide scroll bar but not functionality
 }
 
 .nav_link_div:hover{
-    color: #fff;
+    color:#15c9f6;
     text-shadow: 0 2px 5px rgb(0 0 0 / 40%);
 }
 
@@ -2242,17 +2258,36 @@ hide scroll bar but not functionality
 }
 
 .nav_link_login:hover{
-    color: #fff;
+    color: #15c9f6;
     text-shadow: 0 2px 5px rgb(0 0 0 / 40%);
 }
 
 
-.footer_last_container{
-    max-width: 1000px;
-    width: 100%;
-    text-align: center;
-    position: relative;
+.social_icon_container{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 30px;
 }
+
+.app_icon_container{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 20px;
+}
+.social_icon{
+    font-size: 30px;
+    color: white;
+    margin: 0px 3px;
+}
+
+.social_icon:hover{
+    color: #15c9f6;
+    text-shadow: 0 2px 5px rgb(0 0 0 / 40%);
+}
+
 
 .copy_right_footer{
     width: 100%;
@@ -2261,9 +2296,4 @@ hide scroll bar but not functionality
     color: white;
     padding: 10px 0px;
 }
-
-
-.footer_sub_container_box{
-    display: flex;
-    flex-direction: column;
-}
+/*----footer section end----*/
