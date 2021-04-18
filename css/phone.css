@@ -382,12 +382,14 @@ Collection Media Query
     .w2 {
         margin-top: 5px!important;
     }
+    /*
     .main-navigation{
         flex-direction:column;
     }
+    
     .div-navigate{
         margin-bottom: 10px;
-    }
+    }*/
 
     .containe {
         flex-direction: column;
@@ -457,18 +459,18 @@ Collection Media Query
 
     .social_icon_container{
         left: 0!important;
-        right: 0!important;
+        right: unset!important;
         top: unset!important;
         margin: 0px !important;
-        margin-right: 150px!important;
+        margin-left: 35%!important;
     }
 
     .app_icon_container{
         right: 0!important;
-        left: 0!important;
+        left: unset!important;
         bottom: unset!important;
         margin: 0px !important;
-        margin-left: 150px!important;
+        margin-right: 35%!important;
     }
 
     .copy_right_footer{
@@ -492,6 +494,17 @@ Collection Media Query
         right: 20%!important;
     }
 }
+
+@media(max-width:750px){ 
+    .social_icon_container{
+    
+        margin-left: 30%!important;
+    }
+
+    .app_icon_container{
+        margin-right: 30%!important;
+    }
+}
 @media(max-width:699px){ 
     .menu-btn_burger{
         right: 22%!important;
@@ -509,14 +522,25 @@ Collection Media Query
     .login_btn_1 {
         padding: 5px 25px!important;
     }
+
+    .social_icon_container{
+    
+        margin-left: 25%!important;
+    }
+
+    .app_icon_container{
+        margin-right: 25%!important;
+    }
+
+
 }
 @media(max-width:599px){ 
     .menu-btn_burger{
         right: 25%!important;
     }
-    .btn-navigate {
+    /*.btn-navigate {
         font-size: 15px!important;
-    }
+    }*/
 }
 
 @media(max-width:588px){ 
@@ -617,7 +641,7 @@ Collection Media Query
     .image-m {
         width: 120px!important;
     }
-
+    /*
     .social_icon_container{
         margin-right: 125px!important;
     }
@@ -625,9 +649,19 @@ Collection Media Query
     .app_icon_container{
         margin-left: 125px!important;
     }
+    */
 
     .social_icon{
         font-size: 28!important;
+    }
+
+    .social_icon_container{
+    
+        margin-left: 20%!important;
+    }
+
+    .app_icon_container{
+        margin-right: 20%!important;
     }
 }
 
@@ -691,9 +725,9 @@ Collection Media Query
         margin: 5px 0px!important;
         font-size: 11px!important;
     }
-    .btn-navigate {
+    /*.btn-navigate {
         font-size: 10px!important;
-    }
+    }*/
 
     /*----footer section start----*/
 
@@ -848,6 +882,15 @@ Collection Media Query
 
     .page_top_btn {
         font-size: 13px !important;
+    }
+
+    .social_icon_container{
+    
+        margin-left: 15%!important;
+    }
+
+    .app_icon_container{
+        margin-right: 15%!important;
     }
 
     /*----footer section end----*/
