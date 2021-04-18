@@ -408,7 +408,7 @@ function slideright1() {
 
         setTimeout(function(){
             getslide1.classList.remove('right_scroll_stop');
-        },1000)
+        },1100)
         
     }
     else{
@@ -425,7 +425,7 @@ function slideleft1() {
 
         setTimeout(function(){
             getslide1.classList.remove('left_scroll_stop');
-        },1000)
+        },1100)
     }
    
     else {
@@ -448,7 +448,7 @@ function slideright2() {
 
         setTimeout(function(){
             getslide2.classList.remove('right_scroll_stop');
-        },1000)
+        },1100)
     }
     else{
         slidess2 = slidess2 - 375;
@@ -463,7 +463,7 @@ function slideleft2() {
 
         setTimeout(function(){
             getslide2.classList.remove('left_scroll_stop');
-        },1000)
+        },1100)
     }
    
     else {
@@ -487,7 +487,7 @@ function slideright3(){
         getslide3.classList.add('right_scroll_stop');
         setTimeout(function(){
             getslide3.classList.remove('right_scroll_stop');
-        },1000)
+        },1100)
         
     }
     else{
@@ -503,7 +503,7 @@ function slideleft3(){
         getslide3.classList.add('left_scroll_stop');
         setTimeout(function(){
             getslide3.classList.remove('left_scroll_stop');
-        },1000)
+        },1100)
     }
    
     else {
@@ -527,7 +527,7 @@ function slideright4(){
         getslide4.classList.add('right_scroll_stop');
         setTimeout(function(){
             getslide4.classList.remove('right_scroll_stop');
-        },1000)
+        },1100)
         
     }
     else{
@@ -543,7 +543,7 @@ function slideleft4(){
         getslide4.classList.add('left_scroll_stop');
         setTimeout(function(){
             getslide4.classList.remove('left_scroll_stop');
-        },1000)
+        },1100)
     }
    
     else {
@@ -567,7 +567,7 @@ function slideright5(){
         getslide5.classList.add('right_scroll_stop');
         setTimeout(function(){
             getslide5.classList.remove('right_scroll_stop');
-        },1000)
+        },1100)
         
     }
     else{
@@ -583,7 +583,7 @@ function slideleft5(){
         getslide5.classList.add('left_scroll_stop');
         setTimeout(function(){
             getslide5.classList.remove('left_scroll_stop');
-        },1000)
+        },1100)
     }
    
     else {
@@ -609,7 +609,7 @@ function slideright6(){
         getslide6.classList.add('right_scroll_stop');
         setTimeout(function(){
             getslide6.classList.remove('right_scroll_stop');
-        },1000)
+        },1100)
         
     }
     else{
@@ -625,7 +625,7 @@ function slideleft6(){
         getslide6.classList.add('left_scroll_stop');
         setTimeout(function(){
             getslide6.classList.remove('left_scroll_stop');
-        },1000)
+        },1100)
     }
    
     else {
@@ -651,7 +651,7 @@ function slideright7(){
         getslide7.classList.add('right_scroll_stop');
         setTimeout(function(){
             getslide7.classList.remove('right_scroll_stop');
-        },1000)
+        },1100)
         
     }
     else{
@@ -667,7 +667,7 @@ function slideleft7(){
         getslide7.classList.add('left_scroll_stop');
         setTimeout(function(){
             getslide7.classList.remove('left_scroll_stop');
-        },1000)
+        },1100)
     }
    
     else {
@@ -693,7 +693,7 @@ function slideright8(){
         getslide8.classList.add('right_scroll_stop');
         setTimeout(function(){
             getslide8.classList.remove('right_scroll_stop');
-        },1000)
+        },1100)
         
     }
     else{
@@ -709,7 +709,7 @@ function slideleft8(){
         getslide8.classList.add('left_scroll_stop');
         setTimeout(function(){
             getslide8.classList.remove('left_scroll_stop');
-        },1000)
+        },1100)
     }
    
     else {
@@ -734,7 +734,7 @@ function slideright9(){
         getslide9.classList.add('right_scroll_stop');
         setTimeout(function(){
             getslide9.classList.remove('right_scroll_stop');
-        },1000)
+        },1100)
         
     }
     else{
@@ -750,7 +750,7 @@ function slideleft9(){
         getslide9.classList.add('left_scroll_stop');
         setTimeout(function(){
             getslide9.classList.remove('left_scroll_stop');
-        },1000)
+        },1100)
     }
    
     else {
@@ -775,7 +775,7 @@ function slideright10(){
         getslide10.classList.add('right_scroll_stop');
         setTimeout(function(){
             getslide10.classList.remove('right_scroll_stop');
-        },1000)
+        },1100)
         
     }
     else{
@@ -791,7 +791,7 @@ function slideleft10(){
         getslide10.classList.add('left_scroll_stop');
         setTimeout(function(){
             getslide10.classList.remove('left_scroll_stop');
-        },1000)
+        },1100)
     }
    
     else {
