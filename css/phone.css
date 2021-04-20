@@ -275,6 +275,7 @@ Collection Media Query
     }
     .main-nav-1.open{
         display: block!important;
+        margin-right: 2px!important;
     }
     .containe{   
         /*flex-direction: column;*/
