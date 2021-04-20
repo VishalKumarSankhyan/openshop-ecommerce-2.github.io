@@ -66,10 +66,9 @@ p{
     max-width: 1600px;
     min-width: 230px;
     margin: auto;
-
+    background: linear-gradient(to right ,#00ccff 0% ,#00ccff 0% , #00ccff 100%);
     will-change: transform;
     transition: transform 0.2s cubic-bezier(0, 0, 0.3, 1) 0s;
-    background: linear-gradient(to right ,#15c9f6 0% ,#15c9f6 0% , #15c9f6 100%);
 }
 
 .navbar.navbar_sh{
@@ -103,7 +102,7 @@ p{
     font-size: 1.3rem;
     
 }
-.navbar:before{
+/*.navbar:before{
     content: "";
     position: absolute;
     top: 0%;
@@ -113,7 +112,7 @@ p{
     opacity: 2.9;
     z-index: -1;
     background: linear-gradient(to right ,#00ccff 0% ,#00ccff 0% , #00ccff 100%);
-}
+}*/
 .input-group-append input {
     color: black;
 }
@@ -409,7 +408,8 @@ p{
 
 .nav-item2{
     font-size: 20px;
-    background: linear-gradient(to right ,#15c9f6 0% ,#15c9f6 0% , #15c9f6 100%);
+    /*background: linear-gradient(to right ,#15c9f6 0% ,#15c9f6 0% , #15c9f6 100%);*/
+    background: linear-gradient(to right ,#00ccff 0% ,#00ccff 0% , #00ccff 100%);
     box-shadow: 0 1px 6px 0 rgb(32 33 36 / 15%);
 }
 
