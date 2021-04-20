@@ -993,3 +993,7 @@ window.onload = function () {
     });
 
 }
+
+function back_page(){
+    window.history.back();
+};
