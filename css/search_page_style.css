@@ -2,7 +2,14 @@
 .l-scroll-h {
     margin: 0px 0px !important;
 }
+
 /*link bar end*/
+.back_arrow_box{
+    margin: 0px 8px;
+    margin-top: 5px;
+    display: none;
+}
+
 
 .desktop_filter_sort_search_product{
     display: flex;
@@ -211,7 +218,7 @@
 
     .sort_mobile_filter_sub_show{
         display: block!important;
-        margin-top: 104px!important;
+        margin-top: 48px!important;
     }
 
 
@@ -232,9 +239,52 @@
         max-width: 650px;
     }
 
+
+
+    /*mobile css for search product start*/
+    .burger{
+        display: none!important;
+    }
+    .burger-1{
+            margin: 0px!important;
+    }
+
+    .line-1{
+        display: none!important;
+    }
+
+    .navbar-brand{
+        display: none!important;
+    }
+
+    .main-nav{
+        display: none!important; 
+    }
+
+    .main-nav-1 {
+        display: block!important; 
+        margin-right: 3px!important;
+    }
+
+    .navbar{
+        padding: .2rem .2rem!important;
+    }
+
+    .autocomplete-items{
+        margin-left: 44px!important;
+        margin-right: 37px!important;
+    }
+
+    .back_arrow_box{
+        display: block!important;
+    }
+
     
+    .can1 svg {
+        right: 73px;
+    }
 
-
+     /*mobile css for search product end*/
 }
 
 
@@ -585,9 +635,7 @@
 }
 
 @media(max-width:299px){ 
-    .sort_mobile_filter_sub_show{
-        margin-top: 90px!important;
-    }
+    
 
 }
 
