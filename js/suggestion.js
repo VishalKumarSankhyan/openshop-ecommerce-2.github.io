@@ -309,5 +309,3 @@ function autocomplete(inp, arr) {
     closeAllLists(e.target);
   });
 }
-
-
