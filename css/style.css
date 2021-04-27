@@ -11,8 +11,9 @@ html{
 
 body{
     background-color:#f1f3f6;
-    max-width: 1600px;
+    max-width: 1500px;
     min-width: 230px;
+    min-height: 230px;
     margin: auto;
     position: relative;
     user-select: none;
@@ -276,10 +277,14 @@ p{
     margin: 10px 0px;
 }
 
+.burgermain{
+    margin: 5px 4px!important;
+}
+
 .line{  
     width: 30px;
     background-color: white;
-    height: 2px;
+    height: 2.2px;
     margin: 4px 4px;
 }
 
@@ -288,7 +293,7 @@ p{
     cursor: pointer;
      /*right: 5%;
     top:15px;*/
-    margin: 8px 5px;
+    margin: 7px 5px;
 }
 
 .line-1{  
@@ -440,7 +445,7 @@ p{
     height: 90vh;
     overflow: auto;
     white-space: nowrap;
-    padding-bottom: 20px;
+    padding-bottom: 18px;
 }
   
 .nav-item2 p {
