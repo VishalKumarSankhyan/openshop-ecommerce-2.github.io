@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <!-- browser them color-->
+  <meta name="theme-color" content="#15c9f6" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!--font awesome icon-->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+    crossorigin="anonymous" />
+
+  <!--bootstrap icon-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+
+  <!-- google font style-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/search_product_suggestion.css">
+
+  <title>search product in openshop | india's largest construction raw material e-commerce site</title>
+  <!-- page icon-->
+  <!--<link rel="shortcut icon" href='images\person-male.jpg'>-->
+
+</head>
+
+<body>
+
+
+  <div class="search_page_main">
+    <!--search bar section start-->
+    <div class="main_search_bar_div">
+      <a class="back_page_btn" onclick="back_page()">
+
+        <svg width="28" height="22" viewBox="0 0 19 16" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.556 7.847H1M7.45 1L1 7.877l6.45 6.817" stroke="#757575" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" fill="none"></path>
+        </svg>
+      </a>
+
+      <input type="text" class="form-control comment-2" id="myInput" oninput="getsearchvalue()" placeholder="Search"
+        autocomplete="off">
+
+      <div class="can1">
+
+        <svg focusable="false" onclick="clearsearch()" xmlns="http://www.w3.org/2000/svg" width="34" height="34"
+          viewBox="0 0 16 27">
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+          </path>
+        </svg>
+      </div>
+
+    </div>
+    <!--search bar section end-->
+
+    <!--discover more section start-->
+    <div class="discover_more_with_us">
+      <div class="discover_more_label">
+        Discover More
+      </div>
+
+      <div class="discover_more_slide">
+        <div class="discover_more_slide_main">
+
+          <div class="discover_more_element">
+            <!--1st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                Cement
+              </div>
+            </a>
+             <!--2st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                moduler switch
+              </div>
+            </a>
+             <!--3st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                Cera brass
+              </div>
+            </a>
+             <!--4st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                Cera shower
+              </div>
+            </a>
+             <!--5st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                TMT
+              </div>
+            </a>
+            <!--6st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                Paint
+              </div>
+            </a>
+            <!--7st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                door
+              </div>
+            </a>
+            <!--8st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                water tank
+              </div>
+            </a>
+            <!--9st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                light
+              </div>
+            </a>
+            <!--10st-->
+            <a href="#" class="discover_element_sub_main discover_element_ended">
+              <div href="#" class="discover_element_main">
+                tiles
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--discover more section end -->
+
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="js/suggestion.js"></script>
+
+  <script type ="text/javascript">
+      var search_input = document.getElementById('myInput');
+      myInput.focus();
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
