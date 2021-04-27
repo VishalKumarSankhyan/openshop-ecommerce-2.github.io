@@ -479,6 +479,18 @@ Collection Media Query
     }
 
     /*----footer section end----*/
+
+    .search_input_div{
+        display: none!important;
+    }
+    .search_input_adiv{
+        display:block!important;
+        display: flex!important;
+    }
+
+    .sea-2{
+        display:block!important;
+    }
     
 }
 @media(max-width:899px){ 
@@ -900,7 +912,7 @@ Collection Media Query
 
 @media(max-width:299px){ 
     .navbar {
-        padding: .2rem .2rem!important;
+        padding: .4rem 0.6rem!important;
     }
 
     .main-nav a {
