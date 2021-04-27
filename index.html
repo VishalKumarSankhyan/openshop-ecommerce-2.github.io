@@ -15,8 +15,8 @@
   <!--font awesome icon-->
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
-        crossorigin="anonymous" />
+    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+    crossorigin="anonymous" />
 
   <!--bootstrap icon-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
@@ -161,10 +161,7 @@
                 <a href="">
                   <p class="dropdown-item" href="#"><i class="fa fa-user-circle"></i>Log Out</p>
                 </a>
-
                 <br>
-                <br>
-
               </li>
             </ul>
 
@@ -185,7 +182,8 @@
           <div class="line"></div>
         </div>
 
-        <a class="navbar-brand" href="#">openshop</a> <!--text-lowercase-->
+        <a class="navbar-brand" href="#">VKS CART</a>
+        <!--text-lowercase-->
 
         <!--icon start-->
         <div class="main-nav">
@@ -212,24 +210,41 @@
           </div>
 
           <!-- custom search input start -->
+          <div class="search_input_div">
+            <input type="text" class="form-control comment-2" id="myInput" oninput="getsearchvalue()"
+              placeholder="Search" autocomplete="off">
 
-          <input type="text" class="form-control comment-2" id="myInput" oninput="getsearchvalue()" placeholder="Search"
-            autocomplete="off">
+            <div class="can1">
 
-          <div class="can1">
+              <svg focusable="false" onclick="clearsearch()" xmlns="http://www.w3.org/2000/svg" width="34" height="34"
+                viewBox="0 0 16 27">
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                </path>
+              </svg>
+            </div>
 
-            <svg focusable="false" onclick="clearsearch()" xmlns="http://www.w3.org/2000/svg" width="34" height="34"
-              viewBox="0 0 16 27">
-              <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
-              </path>
-            </svg>
+            <div class="input-group-append">
+              <a class="input-group-text search1" href="search_product.html"><i class="fa fa-search"
+                  aria-hidden="true"></i></a>
+            </div>
+
           </div>
+          <!-- custom search input end -->
 
-          <div class="input-group-append">
-            <a class="input-group-text search1" href="search_product.html"><i class="fa fa-search"
-                aria-hidden="true"></i></a>
-          </div>
+
+          <!-- custom search input start -->
+
+          <a class="search_input_adiv" href="search_product_suggestion.html">
+            <input type="text" class="form-control comment-2" oninput="getsearchvalue()"
+              placeholder="Search" autocomplete="off" disabled="disabled" readonly="readonly" />
+
+            <div class="input-group-append">
+              <a class="input-group-text search1 sea-2" href="search_product_suggestion.html" ><i class="fa fa-search"
+                  aria-hidden="true"></i></a>
+            </div>
+
+          </a>
 
           <!-- custom search input end -->
 
@@ -341,8 +356,7 @@
     <div class="scrollmenu container-fluid">
 
       <div class="new1 d_1 container nw1">
-        <a href="#" class="l-scroll-a"><img src="images/icons/construction.jpg" alt="construction"
-            class="l-scroll"></a>
+        <a href="#" class="l-scroll-a"><img src="images/icons/construction.jpg" alt="construction" class="l-scroll"></a>
         <a href="#" class="l-scroll-h">Construction<i class="fa fa-angle-left lefta"></i></a>
         <div class="dropdown-main">
           <ul>
@@ -1174,8 +1188,7 @@
       </div>
 
       <div class="new1 d_1 container">
-        <a href="#" class="l-scroll-a"><img src="images/icons/sink.jpg" alt="Kitchent"
-            class="l-scroll"></a>
+        <a href="#" class="l-scroll-a"><img src="images/icons/sink.jpg" alt="Kitchent" class="l-scroll"></a>
         <a href="#" class="l-scroll-h">Kitchen<i class="fa fa-angle-left lefta"></i></a>
         <div class="dropdown-main">
           <ul>
@@ -1340,8 +1353,7 @@
       </div>
 
       <div class="new1 d_1 container">
-        <a href="#" class="l-scroll-a"><img src="images/icons/door-logo.jpg" alt="Furniture"
-            class="l-scroll"></a>
+        <a href="#" class="l-scroll-a"><img src="images/icons/door-logo.jpg" alt="Furniture" class="l-scroll"></a>
         <a href="#" class="l-scroll-h">Furniture<i class="fa fa-angle-left lefta"></i></a>
         <div class="dropdown-main">
           <ul>
@@ -1450,8 +1462,7 @@
       </div>
 
       <div class="new1 d_1 container">
-        <a href="#" class="l-scroll-a"><img src="images/icons/construction.jpg" alt="cement"
-            class="l-scroll"></a>
+        <a href="#" class="l-scroll-a"><img src="images/icons/construction.jpg" alt="cement" class="l-scroll"></a>
         <a href="#" class="l-scroll-h">Construction<i class="fa fa-angle-left lefta"></i></a>
         <div class="dropdown-main2">
           <ul>
@@ -1553,8 +1564,7 @@
       </div>
 
       <div class="new1 d_1 container">
-        <a href="#" class="l-scroll-a"><img src="images/icons/moduler switch.jpg" alt="cement"
-            class="l-scroll"></a>
+        <a href="#" class="l-scroll-a"><img src="images/icons/moduler switch.jpg" alt="cement" class="l-scroll"></a>
         <a href="#" class="l-scroll-h">Electronics<i class="fa fa-angle-left lefta"></i></a>
         <div class="dropdown-main2">
           <ul>
@@ -1656,8 +1666,7 @@
       </div>
 
       <div class="new1 d_1 container">
-        <a href="#" class="l-scroll-a"><img src="images/icons/cera wash basin.jpg" alt="cement"
-            class="l-scroll"></a>
+        <a href="#" class="l-scroll-a"><img src="images/icons/cera wash basin.jpg" alt="cement" class="l-scroll"></a>
         <a href="#" class="l-scroll-h">SanitaryWare<i class="fa fa-angle-left lefta"></i></a>
         <div class="dropdown-main2">
           <ul>
@@ -1759,8 +1768,7 @@
       </div>
 
       <div class="new1 d_1 container">
-        <a href="#" class="l-scroll-a"><img src="images/icons/sink.jpg"  alt="cement"
-            class="l-scroll"></a>
+        <a href="#" class="l-scroll-a"><img src="images/icons/sink.jpg" alt="cement" class="l-scroll"></a>
         <a href="#" class="l-scroll-h">Kitchen<i class="fa fa-angle-left lefta"></i></a>
         <div class="dropdown-main2">
           <ul>
@@ -1863,8 +1871,7 @@
 
 
       <div class="new1 d_1 container">
-        <a href="#" class="l-scroll-a"><img src="images/icons/door-logo.jpg" alt="cement"
-            class="l-scroll"></a>
+        <a href="#" class="l-scroll-a"><img src="images/icons/door-logo.jpg" alt="cement" class="l-scroll"></a>
         <a href="#" class="l-scroll-h">Furniture<i class="fa fa-angle-left lefta"></i></a>
         <div class="dropdown-main2">
           <ul>
@@ -5664,10 +5671,10 @@
       <button class="page_top_btn" onclick="topfunction()">
         Top of Page
       </button>
-       <!-- top  of page div -->
+      <!-- top  of page div -->
 
-       <!--navlink section start-->
-       <div class="footer_div_section">
+      <!--navlink section start-->
+      <div class="footer_div_section">
 
         <div class="footer_sub_container">
 
@@ -5691,14 +5698,14 @@
           </div>
 
           <div class="footer_sub_container_box">
-            <a href="#" class="nav_link_div" onclick="openfullscreen()" >Fullscreen</a>
+            <a href="#" class="nav_link_div" onclick="openfullscreen()">Fullscreen</a>
             <a href="#" class="nav_link_div">Address</a>
           </div>
 
         </div>
 
         <div class="footer_sub_container">
-          
+
           <div class="footer_sub_container_box">
             <a href="#" class="nav_link_div">CONTACT US</a>
             <a href="#" class="nav_link_div">About Us</a>
@@ -5718,9 +5725,9 @@
             <a href="#" class="social_icon"><i class="fa fa-facebook-square"></i></a>
             <a href="#" class="social_icon"><i class="fa fa-instagram"></i></a>
           </div>
-        
+
           <a href="#" class="nav_link_login">Alredy a customer Sign in</a>
-  
+
 
           <div class="app_icon_container">
             <a href="#" class="social_icon"><i class="fa fa-google"></i></a>
@@ -5730,16 +5737,16 @@
         </div>
         <!--social media link end-->
 
-       </div>
-        <!--navlink section end-->
+      </div>
+      <!--navlink section end-->
 
-       <!--copyright section start-->
-       <footer class="copy_right_footer">
-         <a>
-          Copyright &copy; 2021-2050 - www.openshop.com - All right are reserved</a>
-       </footer>
+      <!--copyright section start-->
+      <footer class="copy_right_footer">
+        <a>
+          Copyright &copy; 2021-2050 - www.shopcart.com - All right are reserved</a>
+      </footer>
 
-       <!--copyright section end-->
+      <!--copyright section end-->
 
     </section>
 
@@ -5762,6 +5769,7 @@
 
     <script src="js/all function.js"></script>
     <script src="js/suggestion.js"></script>
+    <script src="js/side_menu.js"></script>
 
     <script>
       const content = document.querySelector(".ecommerce_main_box_container");
@@ -5782,6 +5790,9 @@
 
       if (res.matches) {
 
+        des_input = document.querySelector('.search_input_div');
+        des_input.remove();
+
         for (let index1 = 0; index1 < 4; index1++) {
           carousel_des_images = document.querySelector('.dcp');
           carousel_des_images.remove();
@@ -5794,6 +5805,9 @@
 
       }
       else {
+
+        mo_input = document.querySelector('.search_input_adiv');
+        mo_input.remove();
 
         for (let index2 = 0; index2 < 4; index2++) {
           carousel_mo_images = document.querySelector('.mcp');
