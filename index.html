@@ -178,11 +178,11 @@
 
         <div class="burger">
           <div class="line"></div>
-          <div class="line"></div>
+          <div class="line burgermain"></div>
           <div class="line"></div>
         </div>
 
-        <a class="navbar-brand" href="#">VKS CART</a>
+        <a class="navbar-brand" href="#">shopcart</a>
         <!--text-lowercase-->
 
         <!--icon start-->
@@ -205,7 +205,7 @@
         <div class=" input-group mb-3 search">
           <div class="burger-1">
             <div class="line-1"></div>
-            <div class="line-1"></div>
+            <div class="line-1 burgermain"></div>
             <div class="line-1"></div>
           </div>
 
@@ -5777,6 +5777,14 @@
       window.addEventListener("load", () => {
         loader.style.display = "none";
         content.style.display = "block";
+      });
+
+      window.addEventListener("load",()=>{
+        window.scrollTo(0,0);
+      });
+
+      document.addEventListener("touchmove",function(e){
+        e.preventDefault()
       })
     </script>
 
@@ -5787,7 +5795,6 @@
       // Add remove image using javascript
 
       var res = window.matchMedia("(max-width: 992px)")
-
       if (res.matches) {
 
         des_input = document.querySelector('.search_input_div');
