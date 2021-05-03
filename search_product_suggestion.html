@@ -48,7 +48,7 @@
       </a>
 
       <input type="text" class="form-control comment-2" id="myInput" oninput="getsearchvalue()" placeholder="Search"
-        autocomplete="off">
+        autocomplete="off" inputmode="search">
 
       <div class="can1">
 
@@ -149,9 +149,9 @@
   <script src="js/suggestion.js"></script>
 
   <script type ="text/javascript">
+  var search_input = document.getElementById('myInput');
    window.addEventListener("load", () => {
-      var search_input = document.getElementById('myInput');
-      myInput.focus();
+      search_input.focus();
     });
   </script>
 
