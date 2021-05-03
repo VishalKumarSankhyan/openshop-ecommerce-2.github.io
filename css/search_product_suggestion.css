@@ -28,19 +28,24 @@ html{
 
 .main_search_bar_div{
     display: flex;
-    padding: 5px 0px;
+    /*padding: 7px 0px;*/
     background-color: #fff;
+    height: 52px;
+    border-bottom: 1px solid #eaeaea;
 }
 
 /*----search_main section end---*/
 
 /*----back_page_btn section start---*/
 .back_page_btn{
-    margin: 6px 0px;
     margin-left: 8px;
-    margin-right: 3px;
+    margin-right: 6px;
     width: 23px;
     overflow: hidden;
+    height: 52px!important;
+}
+.back_page_btn svg{
+    margin:15px 0px;
 }
 /*----back_page_btn section end---*/
 
@@ -50,7 +55,7 @@ input {
     border: 1px solid transparent;
     background-color: #f1f1f1;
     padding: 10px;
-    font-size: 16px;
+    font-size: 18px!important;
 }
 
 input[type=submit] {
@@ -66,13 +71,27 @@ input:focus{
 input[type=text] {
       background-color: #fff;
       width: 100%;
-      font-family: Roboto,Helvetica,Arial,sans-serif;
+      /*font-family: Roboto,Helvetica,Arial,sans-serif;*/
+      font-family: Roboto,Arial,sans-serif!important;
 }
 
+::placeholder{
+    color: #c9c9c4!important;
+    opacity: 1!important;
+    font-family: Roboto,Arial,sans-serif!important;
+}
+::-ms-input-placeholder{
+    color: #c9c9c4!important;
+    font-family: Roboto,Arial,sans-serif!important;
+}
+::-ms-input-placeholder{
+    color: #c9c9c4!important;
+    font-family: Roboto,Arial,sans-serif!important;
+}
 .can1 svg{
     position: absolute;
     right: 15px;
-    top: 8px;
+    top: 10px;
     background-color: white!important;
 }
 
@@ -82,6 +101,7 @@ input[type=text] {
     fill: currentColor;  
     color: #cac9c9!important;
     height: inherit!important;
+
 }
 .can1.open{
     display:block!important;
@@ -95,6 +115,7 @@ input[type=text] {
     border:none;
     z-index: 99999!important;
     background: white!important;
+    height:51px!important;
 }
 
 /*----search_input section end---*/
@@ -113,15 +134,18 @@ input[type=text] {
     background-color: #f1f3f6;
     left: 0;
     right: 0;
-    top: 51px;
+    top: 55px;
     min-height: 86vh;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
 }
 
 .autocomplete-items div {
     padding: 10px;
     cursor: pointer;
     background-color: #fff;
-    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-size: 17px!important;
+    font-family: Roboto,Arial,sans-serif!important;
 }
 .autocomplete-items div:hover {
     /*when hovering an item:*/
@@ -129,7 +153,7 @@ input[type=text] {
 }
 
 .autocomplete-items div i{
-    margin-right: 10px;
+    margin-right: 12px;
     color:#cac9c9;
     font-size: inherit!important;
 }
@@ -146,15 +170,16 @@ input[type=text] {
 
 .discover_more_with_us{
     background: #fff;
-    margin: 8px 0;
+    margin-top: 4px;
     box-shadow: 0 1px 1.5px rgb(0 0 0 / 12%);
+    border-top: 1px solid #eaeaea;
 }
 
 .discover_more_label{
     padding-top: 14px;
     padding-left: 16px;
     line-height: 14px;
-    font-size: 12px;
+    font-size: 13px;
     color: rgba(33,33,33,.87059);
     white-space: nowrap;
     width: 200px;
@@ -190,11 +215,10 @@ input[type=text] {
 }
 
 .discover_element_main{
-    -webkit-box-shadow: rgb(0 0 0 / 26%) 0 0.5px 1.5px;
-    box-shadow: 0 0.5px 1.5px rgb(0 0 0 / 26%);
     padding: 2px 12px;
     color: #00ccff;
     border-radius: 15px;
+    border: 1px solid #eaeaea;
     font-size: 12px;
     width:fit-content;
     white-space: nowrap;
