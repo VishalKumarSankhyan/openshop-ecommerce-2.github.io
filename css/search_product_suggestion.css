@@ -24,8 +24,6 @@ html{
 /*----search_main section start---*/
 .search_page_main{
     width: 100%;
-    min-height: 100vh;
-    
 }
 
 .main_search_bar_div{
@@ -40,6 +38,7 @@ html{
 .back_page_btn{
     margin: 6px 0px;
     margin-left: 8px;
+    margin-right: 3px;
     width: 23px;
     overflow: hidden;
 }
@@ -193,7 +192,7 @@ input[type=text] {
 .discover_element_main{
     -webkit-box-shadow: rgb(0 0 0 / 26%) 0 0.5px 1.5px;
     box-shadow: 0 0.5px 1.5px rgb(0 0 0 / 26%);
-    padding: 4px 10px;
+    padding: 2px 12px;
     color: #00ccff;
     border-radius: 15px;
     font-size: 12px;
