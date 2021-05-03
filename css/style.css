@@ -63,6 +63,7 @@ p{
     z-index: 1030;
 }
 .navbar {
+    min-height: 45px;
     padding: 0rem 0rem;
     max-width: 1600px;
     min-width: 230px;
@@ -442,10 +443,10 @@ p{
 }
 
 .l-navbar-2{
-    height: 90vh;
+    height: 95vh;
     overflow: auto;
     white-space: nowrap;
-    padding-bottom: 18px;
+    padding-bottom: 30px;
 }
   
 .nav-item2 p {
@@ -623,7 +624,7 @@ yt-img-shadow {
     width: 100%;
     border: none;
     color: #fff;
-    background-color:rgba(0, 0, 0, 0.550);
+    background-color:rgba(0, 0, 0, 0.500);
     cursor: pointer;  
 }
 
