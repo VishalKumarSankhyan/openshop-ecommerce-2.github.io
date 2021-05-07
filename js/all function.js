@@ -1,9 +1,19 @@
+res = window.matchMedia("(max-width: 992px)")
+menun4 = document.querySelector('.navbar');
+
+if (res.matches) {
+    menun4.classList.remove('fixed-top');
+}
+else{
+    menun4.classList.add('fixed-top');
+}
+
 /*---onscroll change menu function start---*/
 //mybutton = document.getElementById("myBtn");
 menun1 = document.querySelector('.burger');
 menun2 = document.querySelector('.navbar-brand');
 menun3 = document.querySelector('.main-nav');
-menun4 = document.querySelector('.navbar');
+
 menun5 = document.querySelector('.burger-1');
 menun6 = document.querySelector('.main-nav-1');
 menun7 = document.querySelector('body');
@@ -12,39 +22,55 @@ menun8 = document.querySelector('.can1 svg');
 search_input = document.querySelector('.comment-2');
 search_btn = document.querySelector('.search1');
 
+second_nav_nar_box=document.querySelector(".second_nav_main")
+
+
 window.onscroll = function () { scrollFuncion() };
 
 function scrollFuncion() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {
+        /*
         //mybutton.style.display = "block";
         menun1.classList.add('open');
         menun2.classList.add('open');
         menun3.classList.add('open');
         menun4.classList.add('open');
-        menun5.classList.add('open');
+        //menun5.classList.add('open');
         menun6.classList.add('open');
         menun8.classList.add('open');
 
         menun4.classList.add('navbar_sh');
         search_input.classList.add('open');
         search_btn.classList.add('open');
+        */
+       menun4.classList.add('animation_1');
+       menun4.classList.add('navbar_sh');
 
-        menun4.classList.add('animation_1');
+        if (res.matches) {
+            second_nav_nar_box.style.transform = "translateY(" + 0 + "px)";
+        }
+        else{
+            second_nav_nar_box.style.transform = "translateY(" + -50 + "px)";
+            
+        }
 
     }
     else {
-        //mybutton.style.display = "none";
+       /* //mybutton.style.display = "none";
         menun1.classList.remove('open');
         menun2.classList.remove('open');
         menun3.classList.remove('open');
         menun4.classList.remove('open');
-        menun5.classList.remove('open');
+        //menun5.classList.remove('open');
         menun6.classList.remove('open');
         menun8.classList.remove('open');
 
         menun4.classList.remove('navbar_sh');
         search_input.classList.remove('open');
-        search_btn.classList.remove('open');
+        search_btn.classList.remove('open');*/
+
+        menun4.classList.remove('navbar_sh');
+        second_nav_nar_box.style.transform = "translateY(" + -50 + "px)";
         
     }
 }
