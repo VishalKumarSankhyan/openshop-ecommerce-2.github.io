@@ -156,6 +156,10 @@ var suggestion = ["Anchor",
 /*---suggsetion show section start---*/
 
 autocomplete(document.getElementById("myInput"), suggestion);
+autocomplete(document.getElementById("myInputm"), suggestion);
+
+
+var res = window.matchMedia("(max-width: 992px)")
 
 function autocomplete(inp, arr) {
   /*the autocomplete function takes two arguments,
@@ -171,6 +175,15 @@ function autocomplete(inp, arr) {
     /*create a DIV element that will contain the items (values):*/
     a = document.createElement("DIV");
     a.setAttribute("id", this.id + "autocomplete-list");
+     // change auto complete max-width with js
+     if (res.matches) {
+      var MOBILE_suggestion_box_height=window.innerHeight;
+      MOBILE_suggestion_box_height_info= MOBILE_suggestion_box_height-52;
+      a.style.maxHeight=MOBILE_suggestion_box_height_info+"px";
+    }
+    else{
+      a.style.maxHeight="176px";
+    }
     a.setAttribute("class", "autocomplete-items");
     /*append the DIV element as a child of the autocomplete container:*/
     this.parentNode.appendChild(a);
@@ -258,6 +271,7 @@ function autocomplete(inp, arr) {
 /*---suggsetion show section end---*/
 
 /*---clear search section start---*/
+// for desktop
 c1 = document.querySelector('.can1');
 
 function getsearchvalue() {
@@ -275,15 +289,47 @@ function clearsearch() {
     getsearchvalue()
 }
 
+
+// for mobile
+c2 = document.querySelector('.can2');
+
+function getsearchvaluem(){
+  var searchvalm = document.getElementById("myInputm").value;
+  if (searchvalm) {
+      c2.classList.add('open');
+  }
+  else {
+      c2.classList.remove('open');
+  }
+}
+
+function clearsearchm() {
+  document.getElementById("myInputm").value = '';
+  getsearchvaluem()
+}
+
 /*---clear search section end---*/
 
-/*---backpage function section start---*/
+/* mobile suggestion start function start */
+var mobile_autocomplete_box=document.getElementById("myInputmautocomplete-list")
+var mobile_suggestion_box = document.getElementById("search_page_main");
+menuBtn3 = document.querySelector('body');
 
-function back_page(){
-  window.history.back();
-};
+// open suggestbox
+function opensuggestionbox(){
+  mobile_suggestion_box.style.display="block";
+  menuBtn3.style.overflow="hidden";
+  second_nav_nar_box.style.display="none";
+  document.getElementById("myInputm").focus();
+}
+// close suggestbox
+function opensuggestionboxexit(){
+  mobile_suggestion_box.style.display="none";
+  menuBtn3.style.overflow="auto"
+  second_nav_nar_box.style.display="flex";
+}
+/* mobile suggestion start function end */
 
-/*---backpage function section end---*/
 input_1=document.getElementById('myInput')
 input_1.addEventListener("keyup", function(event){
   if(event.keyCode === 13){
