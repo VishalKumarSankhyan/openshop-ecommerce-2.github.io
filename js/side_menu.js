@@ -36,7 +36,7 @@ burger1.addEventListener('click', () => {
 
     setTimeout(function () {
         menuBtn2.classList.remove('fade_show');
-    }, 1100)
+    }, 1000)
 
     // menu_scroll_bar_top 
     menu_scroll_top.scrollTop = 0;
@@ -55,7 +55,7 @@ burger2.addEventListener('click', () => {
 
     setTimeout(function () {
         menuBtn2.classList.remove('fade_show');
-    }, 1100)
+    }, 1000)
 
     // menu_scroll_bar_top 
     menu_scroll_top.scrollTop = 0;
@@ -238,7 +238,7 @@ window.onload = function () {
 
         setTimeout(function () {
             menuBtn2.classList.remove('fade_show');
-        }, 1100)
+        }, 1000)
 
         // menu_scroll_bar_top 
         menu_scroll_top.scrollTop = 0;
@@ -255,7 +255,7 @@ window.onload = function () {
 
         setTimeout(function () {
             menuBtn2.classList.remove('fade_show');
-        }, 1100)
+        }, 1000)
 
         // menu_scroll_bar_top 
         menu_scroll_top.scrollTop = 0;
