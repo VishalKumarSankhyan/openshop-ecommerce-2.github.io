@@ -18,6 +18,7 @@
     integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
     crossorigin="anonymous" />
 
+
   <!--bootstrap icon-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
 
@@ -25,8 +26,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css\phone.css">
   <link rel="stylesheet" href="css\style.css">
+  <link rel="stylesheet" href="css/search_product_suggestion.css">
 
   <title>openshop | india's largest construction raw material e-commerce site</title>
   <!-- page icon-->
@@ -171,18 +176,32 @@
     <!--side navbar end-->
 
     <!--main navbar start-->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <!--fixed-top-->
 
       <div class="navbar-container p--2">
 
 
         <div class="burger">
+          <svg viewBox="0 0 18 12" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" fill-rule="evenodd" transform="translate(-3 -6)">
+              <path d="m0 0h24v24h-24z"></path>
+              <path
+                d="m1 12c-.55228475 0-1-.4477153-1-1s.44771525-1 1-1h16c.5522847 0 1 .4477153 1 1s-.4477153 1-1 1zm0-5c-.55228475 0-1-.44771525-1-1s.44771525-1 1-1h16c.5522847 0 1 .44771525 1 1s-.4477153 1-1 1zm-1-6c0-.55228475.44771525-1 1-1h16c.5522847 0 1 .44771525 1 1s-.4477153 1-1 1h-16c-.55228475 0-1-.44771525-1-1z"
+                fill="white" fill-rule="nonzero" transform="translate(3 6)"></path>
+            </g>
+          </svg>
+          <!--
           <div class="line"></div>
+          
           <div class="line burgermain"></div>
-          <div class="line"></div>
+          <div class="line"></div>-->
         </div>
 
-        <a class="navbar-brand" href="#">shopcart</a>
+        <!--logo-->
+
+          <a class="navbar-brand" href="#">shopcart</a>
+        
         <!--text-lowercase-->
 
         <!--icon start-->
@@ -203,11 +222,6 @@
 
 
         <div class=" input-group mb-3 search">
-          <div class="burger-1">
-            <div class="line-1"></div>
-            <div class="line-1 burgermain"></div>
-            <div class="line-1"></div>
-          </div>
 
           <!-- custom search input start -->
           <div class="search_input_div">
@@ -235,18 +249,19 @@
 
           <!-- custom search input start -->
 
-          <a class="search_input_adiv" href="search_product_suggestion.html">
-            <input type="text" class="form-control comment-2" oninput="getsearchvalue()"
-              placeholder="Search" autocomplete="off" disabled="disabled" readonly="readonly" />
+          <div class="search_input_adiv" onclick="opensuggestionbox()">
+            <input type="text" class="form-control comment-2" placeholder="Search" autocomplete="off"
+              disabled="disabled" readonly="readonly" />
 
             <div class="input-group-append">
-              <a class="input-group-text search1 sea-2" href="search_product_suggestion.html" ><i class="fa fa-search"
-                  aria-hidden="true"></i></a>
+              <a class="input-group-text search1 sea-2"><i class="fa fa-search" aria-hidden="true"></i></a>
             </div>
 
-          </a>
+          </div>
 
           <!-- custom search input end -->
+
+
 
           <div class="main-nav-1">
 
@@ -347,9 +362,191 @@
 
     </nav>
     <!--main navbar end-->
+
+
+
+    <!--second nav bar start -->
+    <nav class="second_nav_main">
+      <!--burger-->
+      <div class="burger-1">
+        <svg viewBox="0 0 18 12" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" fill-rule="evenodd" transform="translate(-3 -6)">
+            <path d="m0 0h24v24h-24z"></path>
+            <path
+              d="m1 12c-.55228475 0-1-.4477153-1-1s.44771525-1 1-1h16c.5522847 0 1 .4477153 1 1s-.4477153 1-1 1zm0-5c-.55228475 0-1-.44771525-1-1s.44771525-1 1-1h16c.5522847 0 1 .44771525 1 1s-.4477153 1-1 1zm-1-6c0-.55228475.44771525-1 1-1h16c.5522847 0 1 .44771525 1 1s-.4477153 1-1 1h-16c-.55228475 0-1-.44771525-1-1z"
+              fill="#fff" fill-rule="nonzero" transform="translate(3 6)"></path>
+          </g>
+        </svg>
+      </div>
+      <!--logo-->
+      <div class="nav_brand_box">
+        <a class="navbar-brand" href="#">shopcart</a>
+      </div>
+      <!--search-->
+      <div class="main-search" onclick="opensuggestionbox()">
+        <!-- icon button start-->
+        <a><i class="fa fa-search"></i></a>
+        <!-- icon button end-->
+      </div>
+      <!--cart-->
+      <div class="main-nav-2">
+        <!-- icon button start-->
+        <a href="#"><i class="fa fa-shopping-cart"></i></a>
+        <!-- icon button end-->
+      </div>
+
+    </nav>
+    <!--second nav bar end -->
+
+
+
     </div>
   </section>
   <!-- Navbar start end -->
+
+  <!-- custom search input end -->
+
+  <!-- --------------- mobile suggestion box start --------------- -->
+  <div class="search_page_main" id="search_page_main">
+    <!--search bar section start-->
+    <div class="main_search_bar_div">
+      <a class="back_page_btn" onclick="opensuggestionboxexit()">
+
+        <svg width="28" height="22" viewBox="0 0 19 16" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.556 7.847H1M7.45 1L1 7.877l6.45 6.817" stroke="#757575" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" fill="none"></path>
+        </svg>
+      </a>
+
+      <input type="text" class="form-control comment-2 comment-3" id="myInputm" oninput="getsearchvaluem()"
+        placeholder="Search" autocomplete="off" inputmode="search">
+
+      <div class="can2">
+
+        <svg focusable="false" onclick="clearsearchm()" xmlns="http://www.w3.org/2000/svg" width="34" height="34"
+          viewBox="0 0 16 27">
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+          </path>
+        </svg>
+
+      </div>
+
+    </div>
+
+    <!--search bar section end-->
+
+    <!--discover more section start-->
+    <div class="discover_more_with_us">
+      <div class="discover_more_label">
+        Categories
+      </div>
+
+      <div class="discover_more_slide">
+        <div class="discover_more_slide_main">
+
+          <div class="discover_more_element">
+            <!--1st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                Construction
+              </div>
+            </a>
+            <!--2st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                Electronics
+              </div>
+            </a>
+            <!--3st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                SanitaryWare
+              </div>
+            </a>
+            <!--4st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                Kitchen
+              </div>
+            </a>
+            <!--5st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                Furniture
+              </div>
+            </a>
+
+            <!--6st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                Cement
+              </div>
+            </a>
+            <!--7st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                moduler switch
+              </div>
+            </a>
+            <!--8st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                Cera brass
+              </div>
+            </a>
+            <!--9st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                Cera shower
+              </div>
+            </a>
+            <!--10st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                TMT
+              </div>
+            </a>
+            <!--11st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                Paint
+              </div>
+            </a>
+            <!--12st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                door
+              </div>
+            </a>
+            <!--13st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                water tank
+              </div>
+            </a>
+            <!--14st-->
+            <a href="#" class="discover_element_sub_main">
+              <div href="#" class="discover_element_main">
+                light
+              </div>
+            </a>
+            <!--15st-->
+            <a href="#" class="discover_element_sub_main discover_element_ended">
+              <div href="#" class="discover_element_main">
+                tiles
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--discover more section end -->
+
+  </div>
+
+  <!-- --------------- mobile suggestion box end --------------- -->
 
   <!--link slider start-->
   <section class="slide1">
@@ -5779,12 +5976,12 @@
         content.style.display = "block";
       });
 
-      window.addEventListener("load",()=>{
-        window.scrollTo(0,0);
+      window.addEventListener("load", () => {
+        window.scrollTo(0, 0);
       });
 
-      document.addEventListener("touchmove",function(e){
-        e.preventDefault()
+      document.addEventListener("touchmove", function (e) {
+        /*e.preventDefault()*/
       })
     </script>
 
