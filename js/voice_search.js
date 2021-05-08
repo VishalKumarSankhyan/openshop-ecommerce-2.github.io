@@ -38,10 +38,20 @@ if (SpeechRecognition) {
   }
 
   recognition.addEventListener("start", startSpeechRecognition); // <=> recognition.onstart = function() {...}
-  function startSpeechRecognition() {
+  function startSpeechRecognition(event) {
     console.log("Voice activated, SPEAK");
     info.innerHTML = "Listening...";
     mic_voice_btn.classList.add('open')
+    try {
+      setTimeout(function () {
+        const current = event.resultIndex;
+        const transcript = event.results[current][0].transcript;
+        info.innerHTML = transcript;
+      }, 1000)
+    }
+    catch {
+      info.innerHTML = "Listening...";
+    }
   }
 
   recognition.addEventListener("end", endSpeechRecognition); // <=> recognition.onend = function() {...}
@@ -64,7 +74,7 @@ if (SpeechRecognition) {
       searchFormInput.value = transcript;
       getsearchvaluem();
       searchFormInput.focus();
-    }, 2500)
+    }, 5000)
 
   }
 
