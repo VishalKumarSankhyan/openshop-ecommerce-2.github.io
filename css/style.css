@@ -276,7 +276,9 @@ p{
     display: none;
     cursor: pointer;
     min-width: 25px;
+    max-width: 25px;
     padding: 10px 0;
+    overflow: hidden;
 }
 
 .burgermain{
@@ -292,12 +294,11 @@ p{
 
 .burger-1{
     cursor: pointer;
-     /*right: 5%;
-    top:15px;*/
     min-width: 25px;
     max-width: 25px;
     padding: 10px 0;
     margin: 0px 10px;
+    overflow: hidden;
 }
 
 .line-1{  
@@ -2354,7 +2355,7 @@ hide scroll bar but not functionality
     left:0;
     right: 0;
     width: 100%;
-    height:45px;
+    height:50px;
     background: linear-gradient(to right ,#00ccff 0% ,#00ccff 0% , #00ccff 100%);
     box-shadow: 0 1px 6px 0 rgb(32 33 36 / 40%);
     z-index: 99999;
@@ -2362,14 +2363,14 @@ hide scroll bar but not functionality
     display:flex;
     will-change: transform;
     transition: transform 0.25s;  
-    transform: translateY(-50px);
+    transform: translateY(-100px);
 }
 
 .nav_brand_box{
     overflow: hidden;
-    height: 45px;
+    height: 50px;
     width: 150px;
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 .nav_brand_box a{
@@ -2383,7 +2384,7 @@ hide scroll bar but not functionality
     color: white!important;
     background: transparent;
     font-size: 22px;
-    margin: 5px 8px;
+    margin: 8px 8px;
 }
 
 .main-search i {
@@ -2397,9 +2398,107 @@ hide scroll bar but not functionality
     color: white!important;
     background: transparent;
     font-size: 22px;
-    margin: 5px 8px;
+    margin: 8px 8px;
 }
 
 .main-nav-2 i {
     color: white!important;
+}
+
+
+.voice_search_btn{
+    color: #757575!important;
+    background: white;
+    width: 30px;
+    height: 50px;
+    margin: 0px 5px;
+    padding: 10px 5px;
+}
+
+.voice_serch_main_box{
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(24, 23, 23, 0.5);
+    z-index: 99999;
+}
+
+.voice_serch_sub_box{
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background:#ffff;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.voice_serch_sub_box_ex{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.voice_serch_sub_box_close{
+    position: absolute;
+    right: 15px;
+    font-size: 25px;
+    top: 0;
+    color: white;
+    text-align: end;
+    width: 100%;
+}
+
+.voice_serch_sub_main_box{
+    display: none;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 190px;
+    z-index: 9999999;
+}
+
+.search_mice_info{
+    font-size: 18px;
+    margin: 0px 10px;
+    margin-top: 10px;
+    max-height: 55px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.search_mice_btn{
+    height: 60px;
+    width: 60px;
+    color: #fff;
+    background:#0099ff;
+    border-radius: 50px;
+    overflow: hidden;
+    position: absolute;
+    left: 0px;
+    right: 0;
+    text-align: center;
+    margin: 0 auto;
+    bottom: 15px;
+}
+
+.search_mice_btn.open{
+    animation: btn_prograss_shdow 1.1s infinite ease-out;
+}
+
+@keyframes btn_prograss_shdow{
+    0%{
+        box-shadow: 0px 0px 0px 0px #0099ff88;
+    }
+
+    100%{
+        box-shadow: 0px 0px 4px 10px #0099ff88;
+    }
+}
+
+.search_mice_main_btn{
+    padding: 10px 18px;
 }
