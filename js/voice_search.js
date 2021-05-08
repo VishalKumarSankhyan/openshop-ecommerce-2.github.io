@@ -6,6 +6,8 @@ voice_serch_main_box = document.getElementById("voice_serch_main_box");
 voice_serch_sub_box11 = document.getElementById('voice_serch_sub_box');
 
 
+var voice_serach_var = 0;
+
 // The speech recognition interface lives on the browser’s window object
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; // if none exists -> undefined
 
@@ -19,17 +21,19 @@ if (SpeechRecognition) {
     voice_serch_main_box.style.display = "block";
     voice_serch_sub_box11.style.display = "block";
     recognition.start();
+    voice_serach_var = 1;
   }
 
   function close_voice_search_box() {
     voice_serch_main_box.style.display = "none";
     voice_serch_sub_box11.style.display = "none";
     recognition.stop();
+    voice_serach_var = 0;
   }
 
   // voicesearch start stop
   function voice_search_start_stop() {
-    if (recognition.start) {
+    if (voice_serach_var == 1) {
       recognition.start();
     }
     else {
@@ -38,7 +42,7 @@ if (SpeechRecognition) {
   }
 
   recognition.addEventListener("start", startSpeechRecognition); // <=> recognition.onstart = function() {...}
-  function startSpeechRecognition(event) {
+  function startSpeechRecognition() {
     console.log("Voice activated, SPEAK");
     info.innerHTML = "Listening...";
     mic_voice_btn.classList.add('open')
