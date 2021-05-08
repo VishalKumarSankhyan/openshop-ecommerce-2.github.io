@@ -62,8 +62,9 @@ if (SpeechRecognition) {
       voice_serch_main_box.style.display = "none";
       voice_serch_sub_box11.style.display = "none";
       searchFormInput.value = transcript;
+      getsearchvaluem();
       searchFormInput.focus();
-    }, 1200)
+    }, 2500)
 
   }
 
