@@ -50,7 +50,7 @@ function scrollFuncion() {
             second_nav_nar_box.style.transform = "translateY(" + 0 + "px)";
         }
         else{
-            second_nav_nar_box.style.transform = "translateY(" + -50 + "px)";
+            second_nav_nar_box.style.transform = "translateY(" + -100 + "px)";
             
         }
 
@@ -70,7 +70,7 @@ function scrollFuncion() {
         search_btn.classList.remove('open');*/
 
         menun4.classList.remove('navbar_sh');
-        second_nav_nar_box.style.transform = "translateY(" + -50 + "px)";
+        second_nav_nar_box.style.transform = "translateY(" + -100 + "px)";
         
     }
 }
