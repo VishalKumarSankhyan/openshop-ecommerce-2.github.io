@@ -56,7 +56,8 @@ if (SpeechRecognition) {
   function resultOfSpeechRecognition(event) {
     const current = event.resultIndex;
     const transcript = event.results[current][0].transcript;
-
+    info.innerHTML = transcript;
+    /*
     if (!searchFormInput.value) {
       //searchFormInput.value = transcript;
       info.innerHTML = transcript;
@@ -70,6 +71,7 @@ if (SpeechRecognition) {
       voice_serch_main_box.style.display = "none";
       voice_serch_sub_box11.style.display = "none";
     }
+    */
   }
 
 }
