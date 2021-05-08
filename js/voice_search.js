@@ -28,11 +28,11 @@ if (SpeechRecognition) {
   }
 
   // voicesearch start stop
-  function voice_search_start_stop(){
-    if(recognition.start){
+  function voice_search_start_stop() {
+    if (recognition.start) {
       recognition.start();
     }
-    else{
+    else {
       recognition.stop();
     }
   }
@@ -41,8 +41,7 @@ if (SpeechRecognition) {
   function startSpeechRecognition() {
     console.log("Voice activated, SPEAK");
     info.innerHTML = "Listening...";
-    mic_voice_btn.classList.remove('open')
-
+    mic_voice_btn.classList.add('open')
   }
 
   recognition.addEventListener("end", endSpeechRecognition); // <=> recognition.onend = function() {...}
@@ -57,21 +56,15 @@ if (SpeechRecognition) {
     const current = event.resultIndex;
     const transcript = event.results[current][0].transcript;
     info.innerHTML = transcript;
-    /*
-    if (!searchFormInput.value) {
-      //searchFormInput.value = transcript;
-      info.innerHTML = transcript;
+
+    setTimeout(function () {
       mic_voice_btn.classList.remove('open')
       voice_serch_main_box.style.display = "none";
       voice_serch_sub_box11.style.display = "none";
-    }
-    else {
-      info.innerHTML = transcript;
-      mic_voice_btn.classList.remove('open')
-      voice_serch_main_box.style.display = "none";
-      voice_serch_sub_box11.style.display = "none";
-    }
-    */
+      searchFormInput.value = transcript;
+      searchFormInput.focus();
+    }, 1200)
+
   }
 
 }
