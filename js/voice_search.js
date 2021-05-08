@@ -42,16 +42,6 @@ if (SpeechRecognition) {
     console.log("Voice activated, SPEAK");
     info.innerHTML = "Listening...";
     mic_voice_btn.classList.add('open')
-    try {
-      setTimeout(function () {
-        const current = event.resultIndex;
-        const transcript = event.results[current][0].transcript;
-        info.innerHTML = transcript;
-      }, 1000)
-    }
-    catch {
-      info.innerHTML = "Listening...";
-    }
   }
 
   recognition.addEventListener("end", endSpeechRecognition); // <=> recognition.onend = function() {...}
@@ -65,17 +55,13 @@ if (SpeechRecognition) {
   function resultOfSpeechRecognition(event) {
     const current = event.resultIndex;
     const transcript = event.results[current][0].transcript;
-    info.innerHTML = transcript;
 
-    setTimeout(function () {
       mic_voice_btn.classList.remove('open')
       voice_serch_main_box.style.display = "none";
       voice_serch_sub_box11.style.display = "none";
       searchFormInput.value = transcript;
       getsearchvaluem();
       searchFormInput.focus();
-    }, 5000)
-
   }
 
 }
