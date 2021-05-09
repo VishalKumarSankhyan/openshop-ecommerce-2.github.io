@@ -21,23 +21,21 @@ if (SpeechRecognition) {
     voice_serch_main_box.style.display = "block";
     voice_serch_sub_box11.style.display = "block";
     recognition.start();
-    voice_serach_var = 1;
   }
 
   function close_voice_search_box() {
     voice_serch_main_box.style.display = "none";
     voice_serch_sub_box11.style.display = "none";
     recognition.stop();
-    voice_serach_var = 0;
   }
 
   // voicesearch start stop
   function voice_search_start_stop() {
-    if (voice_serach_var == 1) {
-      recognition.start();
+    if (recognition.stop()) {
+      recognition.stop();
     }
     else {
-      recognition.stop();
+      recognition.start();
     }
   }
 
@@ -46,6 +44,7 @@ if (SpeechRecognition) {
     console.log("Voice activated, SPEAK");
     info.innerHTML = "Listening...";
     mic_voice_btn.classList.add('open')
+
   }
 
   recognition.addEventListener("end", endSpeechRecognition); // <=> recognition.onend = function() {...}
