@@ -1,77 +1,352 @@
-/*---side menu open close function start---*/
-burger = document.querySelector('.burger')
-burger1 = document.querySelector('.menu-btn')
-burger2 = document.querySelector('.menu-btn')
-burger3 = document.querySelector('.burger-1')
+(function (root, factory) {
+    'use strict';
+    if (typeof define === 'function' && define.amd) {
+        define(factory);
+    } else if (typeof module === 'object' && module.exports) {
+        module.exports = factory();
+    } else {
+        root.TouchSideSwipe = factory();
+    }
+}(this, function () {
+    var TouchSideSwipe = function (config) {
+        'use strict';
+        //------------------------------------------------------------------
+        var opt = { //default options
+            elInitID: config.elementID || 'touchSideSwipe',
+            elSubmainWidth: config.elementWidth || 400, //px
+            elSubmainMaxWidth: config.elementMaxWidth || 0.8, // *100%
+            sideHookWidth: config.sideHookWidth || 44, //px
+            moveSpeed: config.moveSpeed || 0.2, //sec
+            opacityBackground: config.opacityBackground || 0.8,
+            shiftForStart: config.shiftForStart || 50, // px
+            windowMaxWidth: config.windowMaxWidth || 992, // px
+        };
+        //------------------------------------------------------------------
+        var winInnerWidth = window.innerWidth;
+        var touchstartCoordX;
+        var touchmoveCoordX;
+        var open;
+        var elMainCoordX0;
+        var elInit;
+        var elMain;
+        var elSubmain;
+        //var elLabel;
+        var elBg;
+        var elSubmainWidth;
+        var elMainWidth;
+        var init = false;
 
-const menuBtn = document.querySelector('.l-navbar');
+        //------------------------------------------------------------------
+        // create, define, customize initial elements and states
+        //------------------------------------------------------------------
+        function tssInitStates() {
+            init = true;
+            //-------------------------------
+            // create DOM-elements: main-wrapper, sub-wrapper, label, background
+            //-------------------------------
+            elInit = document.getElementById(opt.elInitID);
+            elMain = document.createElement('div');
+            elSubmain = document.createElement('div');
+            //elLabel = document.createElement('div');
+            //elLabel.innerHTML = '<div class="tss-label_pic"></div>';
+            elBg = document.createElement('div');
+            //-------------------------------
 
-//menuBtn1 = document.querySelector('.menu-btn_burger');
+            //-------------------------------
+            // wrap initial-elem in main in submain, add bg in body
+            elMain.appendChild(elSubmain);
+            //elSubmain.appendChild(elLabel);
+            elInit.parentNode.insertBefore(elMain, elInit);
+            elSubmain.appendChild(elInit);
+            document.body.insertBefore(elBg, document.body.lastChild);
+            //-------------------------------
 
-menuBtn2 = document.querySelector('.menu-btn');
+            //-------------------------------
+            // css classes for customize
+            //-------------------------------
+            elMain.classList = 'tss';
+            elSubmain.classList = 'tss-wrap';
+            //elLabel.classList = 'tss-label';
+            elBg.classList = 'tss-bg';
+            //-------------------------------
 
-menuBtn3 = document.querySelector('body');
+            //-------------------------------
+            // create first style parameters: width and state wrapped DOM-element
+            //-------------------------------
+            if (winInnerWidth > 499) {
+                elSubmainWidth = opt.elSubmainWidth;
+            } else {
+                elSubmainWidth = winInnerWidth * opt.elSubmainMaxWidth;
+            }
+            elSubmain.style.width = elSubmainWidth + 'px';
+            elMainWidth = elSubmainWidth + opt.sideHookWidth;
+            elMain.style.transitionDuration = opt.moveSpeed + 's';
+            elBg.style.transitionDuration = opt.moveSpeed + 's';
+            //-------------------------------
+            tssClose();
+        }
+        //------------------------------------------------------------------
 
-menu_scroll_top = document.querySelector('.l-navbar-2');
+        //------------------------------------------------------------------
+        // recalc parameters on resize window
+        //------------------------------------------------------------------
+        function tssRecalcStates() {
+            if (open === true) {
+                tssClose();
+            }
+            winInnerWidth = window.innerWidth;
+            if (winInnerWidth > 499) {
+                elSubmainWidth = opt.elSubmainWidth;
+            } else {
+                elSubmainWidth = winInnerWidth * opt.elSubmainMaxWidth;
+            }
+            elMainWidth = elSubmainWidth + opt.sideHookWidth;
+            elSubmain.style.width = elSubmainWidth + 'px';
+            elMain.style.transform = 'translateX(' + (-elSubmainWidth) + 'px)';
+            elMain.style.width = elMainWidth + 'px';
+        }
+        //------------------------------------------------------------------
+
+        //------------------------------------------------------------------
+        // start touch-event (use states from tssInitStates, tssRecalcStates)
+        //------------------------------------------------------------------
+        function tssTouchstart(event) {
+            document.body.style.overflow = 'hidden';
+            elMain.style.transitionDuration = '0s';
+            elBg.style.transitionDuration = '0s';
+            elBg.style.zIndex = 99999;
+            elMainCoordX0 = elMain.getBoundingClientRect().left;
+            touchstartCoordX = event.changedTouches[0].clientX;
+        }
+        //------------------------------------------------------------------
+
+        //------------------------------------------------------------------
+        // Drag element (use states from tssInitStates, tssRecalcStates, tssTouchstart)
+        //------------------------------------------------------------------
+        function tssTouchmove(event) {
+            touchmoveCoordX = event.changedTouches[0].clientX;
+            var elMainCoordX0New = touchmoveCoordX - (touchstartCoordX - elMainCoordX0);
+
+            if ((elMainCoordX0New) <= 0) { // swipe touchmove < elSubmainWidth
+                if (touchstartCoordX > elSubmainWidth) { //if opened and touchstart over elSub
+                    elMainCoordX0New = elMainCoordX0New + (touchstartCoordX - elSubmainWidth);
+                }
+                if (touchmoveCoordX <= elSubmainWidth) {
+                    elMain.style.transform = 'translateX(' + elMainCoordX0New + 'px)';
+                }
+                var elBgOpacity = touchmoveCoordX / elSubmainWidth;
+                if (elBgOpacity > 0 && elBgOpacity < 1) {
+                    if (elBgOpacity >= opt.opacityBackground) {
+                        elBg.style.opacity = opt.opacityBackground;
+                    } else {
+                        elBg.style.opacity = elBgOpacity;
+                    }
+                }
+            }
+        }
+        //------------------------------------------------------------------
+
+        //------------------------------------------------------------------
+        // end touch-event (use states from tssInitStates, tssRecalcStates, tssTouchmove)
+        //------------------------------------------------------------------
+        function tssTouchend(event) {
+            var touchendCoordX = event.changedTouches[0].clientX;
+            document.body.style.overflow = '';
+            elMain.style.transitionDuration = opt.moveSpeed + 's'; //todo: перетащить в open/close
+            elBg.style.transitionDuration = opt.moveSpeed + 's';
+            if (!open && touchendCoordX > touchstartCoordX) {
+                if (Math.abs(touchstartCoordX - touchendCoordX) > opt.shiftForStart) {
+                    tssOpen();
+                } else {
+                    tssClose();
+                }
+            } //touchendCoordX!==touchstartCoordX, equal for click event
+            else if (!open && touchendCoordX < touchstartCoordX) { // if not opened and drag move left 
+                tssClose();
+            }
+            // elSubmainWidth/2 > touchendCoordX
+            else if (open && (touchendCoordX < touchstartCoordX) && (touchendCoordX <= elSubmainWidth)) {
+                if ((elSubmainWidth / 3 >= touchendCoordX)) {
+                    tssClose();
+                } else {
+                    tssOpen();
+                }
+            }
+        }
+        //------------------------------------------------------------------
+
+        //------------------------------------------------------------------
+        // open/close on click label-element
+        //------------------------------------------------------------------
+        /*function elLabelClick(event) {
+            event.stopPropagation();
+            if (open === false) {
+                tssOpen();
+            } else {
+                tssClose();
+            }
+        }*/
+
+        //------------------------------------------------------------------
+
+        //------------------------------------------------------------------
+        // open/close on click background-element
+        //------------------------------------------------------------------
+        function elBgClick(event) {
+            event.stopPropagation();
+            var elMainCoordX0ForClick = elMain.getBoundingClientRect().left;
+            if (event.clientX > (elMainCoordX0ForClick + elSubmainWidth)) {
+                tssClose();
+            }
+        }
+
+        //------------------------------------------------------------------
+
+        //------------------------------------------------------------------
+        // change states on Open
+        //------------------------------------------------------------------
+        var menu_scroll_top = document.querySelector('.l-navbar-2');
+        var body_page_main = document.querySelector('body');
+
+        function tssOpen() {
+            elBg.style.opacity = opt.opacityBackground;
+            elMain.style.width = winInnerWidth + 'px';
+            //elMain.style.transform = 'translateX(0px)';
+            elMain.style.transform = 'translateX(0%)';
+            elMain.classList.remove('tss--close');
+            elMain.classList.add('tss--open');
+            elBg.classList.remove('tss-bg--close');
+            elBg.classList.add('tss-bg--open');
+            elBg.style.zIndex = '99999';
+            open = true;
+            body_page_main.style.overflow="hidden"
+        }
+        //------------------------------------------------------------------
+
+        //------------------------------------------------------------------
+        // change states on Close
+        //------------------------------------------------------------------
+        function tssClose() {
+            document.body.style.overflow = '';
+            elBg.style.opacity = 0;
+            elMain.style.width = elMainWidth + 'px';
+            //elMain.style.transform = 'translateX(' + (-elSubmainWidth) + 'px)';
+            elMain.style.transform = 'translateX(' + -98 + '%)';
+            elMain.classList.remove('tss--open');
+            elMain.classList.add('tss--close');
+            elBg.classList.remove('tss-bg--open');
+            elBg.classList.add('tss-bg--close');
+            elBg.style.zIndex = '-99999';
+            open = false;
+            body_page_main.style.overflow="auto"
+            menu_scroll_top.scrollTop = 0;
+        }
+        //------------------------------------------------------------------
+
+        var burger_btn1 = document.querySelector('.burger')
+        var burger_btn2 = document.querySelector('.burger-1')
+
+        
+
+        burger_btn1.addEventListener('click', () => {
+            tssOpen();
+        })
+        burger_btn2.addEventListener('click', () => {
+            tssOpen();
+        })
 
 
 
-// side navbar burger
-burger.addEventListener('click', () => {
+        // swipe left to close menu
+        var side_navbar_menu = document.querySelector('#touchSideSwipe')
+        
+        window.onload = function (event) {
+            event.stopPropagation();
+            var elMainCoordX0ForClick = elMain.getBoundingClientRect().left;
 
-    menuBtn.classList.add('open');
-    // menuBtn1.classList.add('open');
-    menuBtn2.classList.add('open');
-    menuBtn3.classList.add('open');
-});
-// close nav burger
-burger1.addEventListener('click', () => {
+            side_navbar_menu.addEventListener('swiped-left', function (e) {
+                tssClose()
+                menu_scroll_top.scrollTop = 0;
+            });
 
-    menuBtn.classList.remove('open');
-    //menuBtn1.classList.remove('open');
-    menuBtn2.classList.remove('open');
-    menuBtn3.classList.remove('open');
+        }
 
-    menuBtn2.classList.add('fade_show');
+        /*--function to detect left , right swipe end ---*/
 
-    setTimeout(function () {
-        menuBtn2.classList.remove('fade_show');
-    }, 1000)
+        //------------------------------------------------------------------
+        // tssClear (for large-width windows)
+        //------------------------------------------------------------------
+        function tssClear() {
+            if ((elMain && elBg) != undefined) {
+                elMain.parentNode.insertBefore(elInit, elMain);
+                elMain.remove();
+                elBg.remove();
+                init = false;
+            }
+        }
+        //------------------------------------------------------------------
 
-    // menu_scroll_bar_top 
-    menu_scroll_top.scrollTop = 0;
-    menu_scroll_top.scrollTop = 0;
+        //------------------------------------------------------------------
+        // winOnresizeEngine (if change width of window)
+        //------------------------------------------------------------------
+        function winOnresizeEngine(event) {
+            winInnerWidth = window.innerWidth;
+            if (winInnerWidth < opt.windowMaxWidth && !init) {
+                tssActionsEngine();
+            } else if (winInnerWidth >= opt.windowMaxWidth && init) {
+                tssClear();
+            }
+        }
+        //------------------------------------------------------------------
 
-});
-// close nav burger
-burger2.addEventListener('click', () => {
+        //------------------------------------------------------------------
+        // set of listeners and states
+        //------------------------------------------------------------------
+        function tssActionsEngine() {
+            if (winInnerWidth < opt.windowMaxWidth && !init) {
+                tssInitStates();
+                window.addEventListener('resize', tssRecalcStates, false);
+                elMain.addEventListener('touchstart', tssTouchstart, false);
+                elMain.addEventListener('touchmove', tssTouchmove, false);
+                elMain.addEventListener('touchend', tssTouchend, false);
+                elMain.addEventListener('click', elBgClick, false);
+                //elLabel.addEventListener('click', elLabelClick, false);
+            }
+            window.addEventListener('resize', winOnresizeEngine, false);
+        }
+        //------------------------------------------------------------------
 
-    menuBtn.classList.remove('open');
-    // menuBtn1.classList.remove('open');
-    menuBtn2.classList.remove('open');
-    menuBtn3.classList.remove('open');
+        //------------------------------------------------------------------
+        // aaaand actioooon!
+        //------------------------------------------------------------------
+        tssActionsEngine();
 
-    menuBtn2.classList.add('fade_show');
+        //public functions
+        var returnTssOpen;
+        var returnTssClose;
+        function tssRecalcApi() {// if not mobile window width
+            if (winInnerWidth > opt.windowMaxWidth) {
+                var returnTssFailed = '(touch-sideswipe) cant use when window inner width > ' + opt.windowMaxWidth + 'px (your actual option windowMaxWidth). Please, add the condition here.';
+                returnTssOpen = function () { console.log('tssOpen ' + returnTssFailed) };
+                returnTssClose = function () { console.log('tssClose ' + returnTssFailed) };
+            }
+            else {
+                returnTssOpen = tssOpen;
+                returnTssClose = tssClose;
+            }
+        }
+        tssRecalcApi();
+        window.addEventListener('resize', tssRecalcApi, false);
 
-    setTimeout(function () {
-        menuBtn2.classList.remove('fade_show');
-    }, 1000)
+        return {
+            tssOpen: returnTssOpen,
+            tssClose: returnTssClose
+        }
 
-    // menu_scroll_bar_top 
-    menu_scroll_top.scrollTop = 0;
-    menu_scroll_top.scrollTop = 0;
+    };
+    return TouchSideSwipe;
+}));
 
-});
-// small nav bar burger
-burger3.addEventListener('click', () => {
-
-    menuBtn.classList.add('open');
-    // menuBtn1.classList.add('open');
-    menuBtn2.classList.add('open');
-    menuBtn3.classList.add('open');
-});
-
-/*---side menu open close function start---*/
 
 /*--function to detect left , right swipe start---*/
 
@@ -223,45 +498,3 @@ burger3.addEventListener('click', () => {
     }
 
 }(window, document));
-
-// swipe left to close menu
-
-window.onload = function () {
-
-    burger1.addEventListener('swiped-left', function (e) {
-        burger1.classList.remove('open');
-        menuBtn.classList.remove('open');
-        menuBtn3.classList.remove('open');
-        //menuBtn1.classList.remove('open');
-
-        menuBtn2.classList.add('fade_show');
-
-        setTimeout(function () {
-            menuBtn2.classList.remove('fade_show');
-        }, 1000)
-
-        // menu_scroll_bar_top 
-        menu_scroll_top.scrollTop = 0;
-        menu_scroll_top.scrollTop = 0;
-    });
-
-    menuBtn.addEventListener('swiped-left', function (e) {
-        burger1.classList.remove('open');
-        menuBtn.classList.remove('open');
-        menuBtn3.classList.remove('open');
-        // menuBtn1.classList.remove('open');
-
-        menuBtn2.classList.add('fade_show');
-
-        setTimeout(function () {
-            menuBtn2.classList.remove('fade_show');
-        }, 1000)
-
-        // menu_scroll_bar_top 
-        menu_scroll_top.scrollTop = 0;
-        menu_scroll_top.scrollTop = 0;
-    });
-
-}
-
-/*--function to detect left , right swipe end ---*/
