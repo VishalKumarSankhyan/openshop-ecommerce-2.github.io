@@ -16,7 +16,7 @@
             elSubmainWidth: config.elementWidth || 400, //px
             elSubmainMaxWidth: config.elementMaxWidth || 0.8, // *100%
             sideHookWidth: config.sideHookWidth || 44, //px
-            moveSpeed: config.moveSpeed || 0.2, //sec
+            moveSpeed: config.moveSpeed || 0.1, //sec
             opacityBackground: config.opacityBackground || 0.8,
             shiftForStart: config.shiftForStart || 50, // px
             windowMaxWidth: config.windowMaxWidth || 992, // px
@@ -144,6 +144,7 @@
                 }
             }
         }
+
         //------------------------------------------------------------------
 
         //------------------------------------------------------------------
@@ -151,7 +152,7 @@
         //------------------------------------------------------------------
         function tssTouchend(event) {
             var touchendCoordX = event.changedTouches[0].clientX;
-            document.body.style.overflow = '';
+            document.body.style.overflow = 'hidden';
             elMain.style.transitionDuration = opt.moveSpeed + 's'; //todo: перетащить в open/close
             elBg.style.transitionDuration = opt.moveSpeed + 's';
             if (!open && touchendCoordX > touchstartCoordX) {
@@ -166,7 +167,7 @@
             }
             // elSubmainWidth/2 > touchendCoordX
             else if (open && (touchendCoordX < touchstartCoordX) && (touchendCoordX <= elSubmainWidth)) {
-                if ((elSubmainWidth / 3 >= touchendCoordX)) {
+                if ((elSubmainWidth / 4 >= touchendCoordX)) {
                     tssClose();
                 } else {
                     tssOpen();
@@ -206,20 +207,20 @@
         // change states on Open
         //------------------------------------------------------------------
         var menu_scroll_top = document.querySelector('.l-navbar-2');
-        var body_page_main = document.querySelector('body');
 
         function tssOpen() {
+            elBg.style.display = "block";
+            document.body.style.overflow = 'hidden';
             elBg.style.opacity = opt.opacityBackground;
             elMain.style.width = winInnerWidth + 'px';
-            //elMain.style.transform = 'translateX(0px)';
-            elMain.style.transform = 'translateX(0%)';
+            elMain.style.transform = 'translateX(0px)';
             elMain.classList.remove('tss--close');
             elMain.classList.add('tss--open');
             elBg.classList.remove('tss-bg--close');
             elBg.classList.add('tss-bg--open');
             elBg.style.zIndex = '99999';
             open = true;
-            body_page_main.style.overflow="hidden"
+
         }
         //------------------------------------------------------------------
 
@@ -227,18 +228,18 @@
         // change states on Close
         //------------------------------------------------------------------
         function tssClose() {
+            elBg.style.display = "none";
             document.body.style.overflow = '';
             elBg.style.opacity = 0;
             elMain.style.width = elMainWidth + 'px';
             //elMain.style.transform = 'translateX(' + (-elSubmainWidth) + 'px)';
-            elMain.style.transform = 'translateX(' + -98 + '%)';
+            elMain.style.transform = 'translateX(' + -96 + '%)';
             elMain.classList.remove('tss--open');
             elMain.classList.add('tss--close');
             elBg.classList.remove('tss-bg--open');
             elBg.classList.add('tss-bg--close');
-            elBg.style.zIndex = '-99999';
+            elBg.style.zIndex = '0';
             open = false;
-            body_page_main.style.overflow="auto"
             menu_scroll_top.scrollTop = 0;
         }
         //------------------------------------------------------------------
@@ -246,7 +247,7 @@
         var burger_btn1 = document.querySelector('.burger')
         var burger_btn2 = document.querySelector('.burger-1')
 
-        
+
 
         burger_btn1.addEventListener('click', () => {
             tssOpen();
@@ -259,11 +260,8 @@
 
         // swipe left to close menu
         var side_navbar_menu = document.querySelector('#touchSideSwipe')
-        
-        window.onload = function (event) {
-            event.stopPropagation();
-            var elMainCoordX0ForClick = elMain.getBoundingClientRect().left;
 
+        window.onload = function () {
             side_navbar_menu.addEventListener('swiped-left', function (e) {
                 tssClose()
                 menu_scroll_top.scrollTop = 0;
