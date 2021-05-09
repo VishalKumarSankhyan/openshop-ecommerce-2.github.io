@@ -58,6 +58,7 @@ if (SpeechRecognition) {
   function resultOfSpeechRecognition(event) {
     const current = event.resultIndex;
     const transcript = event.results[current][0].transcript;
+    recognition.stop();
     info.innerHTML = transcript;
     setTimeout(function () {
       mic_voice_btn.classList.remove('open')
@@ -66,7 +67,7 @@ if (SpeechRecognition) {
       searchFormInput.value = transcript;
       getsearchvaluem();
       searchFormInput.focus();
-    }, 1200)
+    }, 2000)
   }
 
 }
