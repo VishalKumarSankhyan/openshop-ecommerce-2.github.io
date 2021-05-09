@@ -423,7 +423,6 @@
       <input type="text" class="form-control comment-2 comment-3" id="myInputm" oninput="getsearchvaluem()"
         placeholder="Search" autocomplete="off" inputmode="search">
 
-
       <div class="can2">
 
         <svg focusable="false" onclick="clearsearchm()" xmlns="http://www.w3.org/2000/svg" width="34" height="34"
@@ -6018,7 +6017,7 @@
         elementWidth: 100, //px
         elementMaxWidth: 0.8, // *100%
         sideHookWidth: 44, //px
-        moveSpeed: 0.2, //sec
+        moveSpeed: 0.3, //sec
         opacityBackground: 0.6,
         shiftForStart: 20, // px
         windowMaxWidth: 992, // px
@@ -6056,7 +6055,7 @@
       if (res.matches) {
 
         des_input = document.querySelector('.search_input_div');
-        des_input.remove();
+        //des_input.remove();
 
         for (let index1 = 0; index1 < 4; index1++) {
           carousel_des_images = document.querySelector('.dcp');
@@ -6072,7 +6071,7 @@
       else {
 
         mo_input = document.querySelector('.search_input_adiv');
-        mo_input.remove();
+        //mo_input.remove();
 
         for (let index2 = 0; index2 < 4; index2++) {
           carousel_mo_images = document.querySelector('.mcp');
