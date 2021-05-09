@@ -2422,7 +2422,7 @@ hide scroll bar but not functionality
     width: 100%;
     height: 100%;
     background: rgba(24, 23, 23, 0.5);
-    z-index: 99999;
+    z-index: 999999;
 }
 
 .voice_serch_sub_box{
