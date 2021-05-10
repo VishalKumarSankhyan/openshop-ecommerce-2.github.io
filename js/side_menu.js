@@ -107,6 +107,7 @@
         }
         //------------------------------------------------------------------
 
+
         //------------------------------------------------------------------
         // start touch-event (use states from tssInitStates, tssRecalcStates)
         //------------------------------------------------------------------
@@ -119,6 +120,7 @@
             touchstartCoordX = event.changedTouches[0].clientX;
         }
         //------------------------------------------------------------------
+
 
         //------------------------------------------------------------------
         // Drag element (use states from tssInitStates, tssRecalcStates, tssTouchstart)
@@ -147,6 +149,7 @@
 
         //------------------------------------------------------------------
 
+
         //------------------------------------------------------------------
         // end touch-event (use states from tssInitStates, tssRecalcStates, tssTouchmove)
         //------------------------------------------------------------------
@@ -169,12 +172,18 @@
             else if (open && (touchendCoordX < touchstartCoordX) && (touchendCoordX <= elSubmainWidth)) {
                 if ((elSubmainWidth / 4 >= touchendCoordX)) {
                     tssClose();
-                } else {
+                }
+                 else {
+                    
                     tssOpen();
                 }
             }
+            else{
+                tssOpen();
+            }
         }
         //------------------------------------------------------------------
+
 
         //------------------------------------------------------------------
         // open/close on click label-element
@@ -244,6 +253,17 @@
         }
         //------------------------------------------------------------------
 
+        //------------------------------------------------------------------
+        /* -------burger btn open sidemenu -------*/
+        //------------------------------------------------------------------
+
+        var sidenavbar_scroll = document.querySelector('#touchSideSwipe')
+        sidenavbar_scroll.addEventListener('touchstart', SidemenuTouchStart, false);
+
+        function SidemenuTouchStart(){
+            tssOpen();
+        }
+
         var burger_btn1 = document.querySelector('.burger')
         var burger_btn2 = document.querySelector('.burger-1')
 
@@ -255,10 +275,11 @@
         burger_btn2.addEventListener('click', () => {
             tssOpen();
         })
+        //------------------------------------------------------------------
 
-
-
-        // swipe left to close menu
+        //------------------------------------------------------------------
+        /*------- swipe left to close menu -------*/
+        //------------------------------------------------------------------
         var side_navbar_menu = document.querySelector('#touchSideSwipe')
 
         window.onload = function () {
@@ -268,6 +289,7 @@
             });
 
         }
+        //------------------------------------------------------------------
 
         /*--function to detect left , right swipe end ---*/
 
@@ -303,14 +325,14 @@
         function tssActionsEngine() {
             if (winInnerWidth < opt.windowMaxWidth && !init) {
                 tssInitStates();
-                window.addEventListener('resize', tssRecalcStates, false);
+                //window.addEventListener('resize', tssRecalcStates, false);
                 elMain.addEventListener('touchstart', tssTouchstart, false);
                 elMain.addEventListener('touchmove', tssTouchmove, false);
                 elMain.addEventListener('touchend', tssTouchend, false);
                 elMain.addEventListener('click', elBgClick, false);
                 //elLabel.addEventListener('click', elLabelClick, false);
             }
-            window.addEventListener('resize', winOnresizeEngine, false);
+           // window.addEventListener('resize', winOnresizeEngine, false);
         }
         //------------------------------------------------------------------
 
@@ -345,9 +367,9 @@
     return TouchSideSwipe;
 }));
 
-
+//------------------------------------------------------------------
 /*--function to detect left , right swipe start---*/
-
+//------------------------------------------------------------------
 (function (window, document) {
 
     'use strict';
@@ -496,3 +518,4 @@
     }
 
 }(window, document));
+//------------------------------------------------------------------
