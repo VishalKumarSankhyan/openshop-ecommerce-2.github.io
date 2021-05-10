@@ -238,7 +238,6 @@
             elBg.style.opacity = opt.opacityBackground;
             elMain.style.width = winInnerWidth + 'px';
             elMain.style.transitionDuration = 0 + 's';
-            elBg.style.transitionDuration =  0 + 's';
             elMain.style.transform = 'translateX(0px)';
             elMain.classList.remove('tss--close');
             elMain.classList.add('tss--open');
@@ -259,6 +258,7 @@
             elBg.style.opacity = 0;
             elMain.style.width = elMainWidth + 'px';
             //elMain.style.transform = 'translateX(' + (-elSubmainWidth) + 'px)';
+            elMain.style.transitionDuration = opt.moveSpeed + 's';
             elMain.style.transform = 'translateX(' + -96 + '%)';
             elMain.classList.remove('tss--open');
             elMain.classList.add('tss--close');
