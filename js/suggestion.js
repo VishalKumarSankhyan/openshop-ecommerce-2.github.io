@@ -212,7 +212,7 @@ function autocomplete(inp, arr) {
   });
   
   /*execute a function presses a key on the keyboard:*/
-  inp.addEventListener("oninput=", function (e) {
+  inp.addEventListener("oninput", function (e) {
     var x = document.getElementById(this.id + "autocomplete-list");
     if (x) x = x.getElementsByTagName("div");
     if (e.keyCode == 40) {
