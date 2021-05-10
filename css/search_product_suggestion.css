@@ -85,11 +85,14 @@
     }
     
     .can2{
+        width: 30px;
+        position: absolute;
+        right: 0;
         z-index: 999999;
         display: none;
         fill: currentColor;  
         color: #cac9c9!important;
-        height: inherit!important;
+        height: 50px !important;
     
     }
     .can2.open{
@@ -211,7 +214,7 @@
     
     .discover_element_main{
         padding: 2px 12px;
-        color: #00ccff;
+        color: #0099ff;
         border-radius: 5px;
         border: 1px solid #eaeaea;
         font-size: 12px;
