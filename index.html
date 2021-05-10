@@ -423,7 +423,7 @@
       <input type="text" class="form-control comment-2 comment-3" id="myInputm" oninput="getsearchvaluem()"
         placeholder="Search" autocomplete="off" inputmode="search">
 
-      <div class="can2">
+      <div class="can2" onclick="clearsearchm()">
 
         <svg focusable="false" onclick="clearsearchm()" xmlns="http://www.w3.org/2000/svg" width="34" height="34"
           viewBox="0 0 16 27">
@@ -449,7 +449,7 @@
       <div class="voice_serch_sub_main_box" id="voice_serch_sub_box">
 
         <div class="voice_serch_sub_box_close" onclick="close_voice_search_box()">
-          x
+          &#x2715
         </div>
 
         <div class="voice_serch_sub_box">
@@ -457,7 +457,7 @@
           <div class="search_mice_info" id="search_mice_info"></div>
 
           <div class="search_mice_btn" onclick="voice_search_start_stop()">
-            <div class="search_mice_main_btn">
+            <div class="search_mice_main_btn" onclick="voice_search_start_stop()">
               <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="microphone"
                 class="svg-inline--fa fa-microphone fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 352 512">
