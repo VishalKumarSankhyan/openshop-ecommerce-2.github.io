@@ -125,20 +125,43 @@
         //------------------------------------------------------------------
         // Drag element (use states from tssInitStates, tssRecalcStates, tssTouchstart)
         //------------------------------------------------------------------
+        
+        var sidenavbar_main = document.querySelector('.l-navbar-2');
+        var stop_slide_move = 0;
+        var stop_slide_bg = 0;
+
         function tssTouchmove(event) {
             touchmoveCoordX = event.changedTouches[0].clientX;
             var elMainCoordX0New = touchmoveCoordX - (touchstartCoordX - elMainCoordX0);
-
+            
             if ((elMainCoordX0New) <= 0) { // swipe touchmove < elSubmainWidth
                 if (touchstartCoordX > elSubmainWidth) { //if opened and touchstart over elSub
                     elMainCoordX0New = elMainCoordX0New + (touchstartCoordX - elSubmainWidth);
                 }
                 if (touchmoveCoordX <= elSubmainWidth) {
-                    elMain.style.transform = 'translateX(' + elMainCoordX0New + 'px)';
+                    sidenavbar_main.addEventListener('scroll' ,privent_move_on_scroll);
+
+                    function privent_move_on_scroll(){
+                        stop_slide_move=1;
+                    }
+                    if(stop_slide_move){
+                        elMain.style.transform = 'translateX(' + 0 + 'px)';
+                        stop_slide_bg = 1;
+                        setTimeout(function(){
+                            stop_slide_move=0;
+                        },500)
+                    }
+                    else{
+                        elMain.style.transform = 'translateX(' + elMainCoordX0New + 'px)';
+                    }
                 }
                 var elBgOpacity = touchmoveCoordX / elSubmainWidth;
                 if (elBgOpacity > 0 && elBgOpacity < 1) {
-                    if (elBgOpacity >= opt.opacityBackground) {
+                    if (stop_slide_bg){
+                        elBg.style.opacity = 0.6;
+                        stop_slide_bg = 0;
+                    }
+                    else if (elBgOpacity >= opt.opacityBackground) {
                         elBg.style.opacity = opt.opacityBackground;
                     } else {
                         elBg.style.opacity = elBgOpacity;
@@ -170,7 +193,7 @@
             }
             // elSubmainWidth/2 > touchendCoordX
             else if (open && (touchendCoordX < touchstartCoordX) && (touchendCoordX <= elSubmainWidth)) {
-                if ((elSubmainWidth / 4 >= touchendCoordX)) {
+                if ((elSubmainWidth / 5 >= touchendCoordX)) {
                     tssClose();
                 }
                  else {
@@ -179,6 +202,8 @@
                 }
             }
             else{
+                elMain.style.transitionDuration = 0 + 's';
+                elBg.style.transitionDuration = 0 + 's';
                 tssOpen2();
             }
         }
@@ -252,10 +277,6 @@
         //------------------------------------------------------------------
         // change states on Close
         //------------------------------------------------------------------
-        var res1 = window.matchMedia("(max-width: 992px)")
-        var res2 = window.matchMedia("(max-width: 600px)")
-        var res3 = window.matchMedia("(max-width: 400px)")
-        var res4 = window.matchMedia("(max-width: 300px)")
 
         function tssClose() {
             elBg.style.display = "none";
@@ -264,20 +285,7 @@
             elMain.style.width = elMainWidth + 'px';
             //elMain.style.transform = 'translateX(' + (-elSubmainWidth) + 'px)';
             elMain.style.transitionDuration = opt.moveSpeed + 's';
-            // responsive 
-            if (res1.matches){
-                elMain.style.transform = 'translateX(' + -99 + '%)';
-            }
-            if (res2.matches){
-                elMain.style.transform = 'translateX(' + -98 + '%)';
-            }
-            if (res3.matches){
-                elMain.style.transform = 'translateX(' + -97 + '%)';
-            }
-            if (res4.matches){
-                elMain.style.transform = 'translateX(' + -96 + '%)';
-            }
-
+            elMain.style.transform = 'translateX(' + -100 + '%)';
             elMain.classList.remove('tss--open');
             elMain.classList.add('tss--close');
             elBg.classList.remove('tss-bg--open');
@@ -291,13 +299,14 @@
         //------------------------------------------------------------------
         /* -------burger btn open sidemenu -------*/
         //------------------------------------------------------------------
-
-        var sidenavbar_scroll = document.querySelector('#touchSideSwipe')
+        /*
+        var sidenavbar_scroll = document.querySelector('.l-navbar')
         sidenavbar_scroll.addEventListener('touchstart', SidemenuTouchStart, false);
 
         function SidemenuTouchStart(){
             tssOpen();
         }
+        */
 
         var burger_btn1 = document.querySelector('.burger')
         var burger_btn2 = document.querySelector('.burger-1')
