@@ -179,7 +179,7 @@
                 }
             }
             else{
-                tssOpen();
+                tssOpen2();
             }
         }
         //------------------------------------------------------------------
@@ -222,6 +222,23 @@
             document.body.style.overflow = 'hidden';
             elBg.style.opacity = opt.opacityBackground;
             elMain.style.width = winInnerWidth + 'px';
+            elMain.style.transform = 'translateX(0px)';
+            elMain.classList.remove('tss--close');
+            elMain.classList.add('tss--open');
+            elBg.classList.remove('tss-bg--close');
+            elBg.classList.add('tss-bg--open');
+            elBg.style.zIndex = '99999';
+            open = true;
+
+        }
+
+        function tssOpen2() {
+            elBg.style.display = "block";
+            document.body.style.overflow = 'hidden';
+            elBg.style.opacity = opt.opacityBackground;
+            elMain.style.width = winInnerWidth + 'px';
+            elMain.style.transitionDuration = 0 + 's';
+            elBg.style.transitionDuration =  0 + 's';
             elMain.style.transform = 'translateX(0px)';
             elMain.classList.remove('tss--close');
             elMain.classList.add('tss--open');
