@@ -1,4 +1,4 @@
-const searchFormInput = document.querySelector("#myInputm"); // <=> document.querySelector("#search-form input");
+const searchFormInput = document.querySelector("#myInputm"); 
 const info = document.querySelector("#search_mice_info");
 mic_voice_btn = document.querySelector('.search_mice_btn');
 
@@ -53,7 +53,7 @@ if (SpeechRecognition) {
     mic_voice_btn.classList.add('open');
 
     clearTimeout(resulttimeout);
-    console.log("timeoutclear")
+    console.log("timeoutclear");
   }
 
 
@@ -81,12 +81,12 @@ if (SpeechRecognition) {
         getsearchvaluem();
         searchFormInput.focus();
         speechresult = '';
-      }, 1500)
+      }, 1300)
 
     }
     else {
       info.innerHTML = "Try again";
-      mic_voice_btn.classList.remove('open')
+      mic_voice_btn.classList.remove('open');
       speechresult = '';
     }
     recognition.stop();
