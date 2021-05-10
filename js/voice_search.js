@@ -81,7 +81,7 @@ if (SpeechRecognition) {
         getsearchvaluem();
         searchFormInput.focus();
         speechresult = '';
-      }, 2000)
+      }, 1500)
 
     }
     else {
