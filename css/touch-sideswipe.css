@@ -13,13 +13,15 @@
     .tss {
         z-index: 999999;
         position: fixed;
+        user-select: none;
         top: 0;
         left: 0;
         height: 100vh;
         width: 100%!important;
         will-change: transform;
-        transition-property: transform;
-        transition-timing-function: ease;
+        
+        /*transition-property: transform;
+        transition-timing-function: ease;*/
     }
     .tss-wrap {
         height: 100%;
