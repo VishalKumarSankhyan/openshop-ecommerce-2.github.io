@@ -252,6 +252,11 @@
         //------------------------------------------------------------------
         // change states on Close
         //------------------------------------------------------------------
+        var res1 = window.matchMedia("(max-width: 992px)")
+        var res2 = window.matchMedia("(max-width: 600px)")
+        var res3 = window.matchMedia("(max-width: 400px)")
+        var res4 = window.matchMedia("(max-width: 300px)")
+
         function tssClose() {
             elBg.style.display = "none";
             document.body.style.overflow = '';
@@ -259,7 +264,20 @@
             elMain.style.width = elMainWidth + 'px';
             //elMain.style.transform = 'translateX(' + (-elSubmainWidth) + 'px)';
             elMain.style.transitionDuration = opt.moveSpeed + 's';
-            elMain.style.transform = 'translateX(' + -96 + '%)';
+            // responsive 
+            if (res1.matches){
+                elMain.style.transform = 'translateX(' + -99 + '%)';
+            }
+            if (res2.matches){
+                elMain.style.transform = 'translateX(' + -98 + '%)';
+            }
+            if (res3.matches){
+                elMain.style.transform = 'translateX(' + -97 + '%)';
+            }
+            if (res4.matches){
+                elMain.style.transform = 'translateX(' + -96 + '%)';
+            }
+
             elMain.classList.remove('tss--open');
             elMain.classList.add('tss--close');
             elBg.classList.remove('tss-bg--open');
