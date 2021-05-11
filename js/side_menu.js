@@ -125,41 +125,60 @@
         //------------------------------------------------------------------
         // Drag element (use states from tssInitStates, tssRecalcStates, tssTouchstart)
         //------------------------------------------------------------------
-        
-        var sidenavbar_main = document.querySelector('.l-navbar-2');
+
+        var sidenavbar_main1 = document.querySelector('.l-navbar');
+        var sidenavbar_main2 = document.querySelector('.l-navbar-2');
         var stop_slide_move = 0;
         var stop_slide_bg = 0;
+        var scroll_timer;
+
+        sidenavbar_main1.addEventListener('scroll', scroll_started ,false);
+        sidenavbar_main2.addEventListener('scroll', scroll_started ,false);
+
+        sidenavbar_main1.addEventListener('scroll', scroll_stoped ,false);
+        sidenavbar_main2.addEventListener('scroll', scroll_stoped ,false);
+
+        function scroll_started() {
+            stop_slide_move = 1;
+            stop_slide_bg = 1;
+            //console.log("scroll started")
+
+        }
+
+        function scroll_stoped(){
+            clearTimeout(scroll_timer);
+
+            scroll_timer = setTimeout(function(){
+                stop_slide_move = 0;
+                stop_slide_bg = 0;
+                //console.log("scroll stoped")
+            },500);
+        }
+
+
 
         function tssTouchmove(event) {
             touchmoveCoordX = event.changedTouches[0].clientX;
             var elMainCoordX0New = touchmoveCoordX - (touchstartCoordX - elMainCoordX0);
-            
+
             if ((elMainCoordX0New) <= 0) { // swipe touchmove < elSubmainWidth
                 if (touchstartCoordX > elSubmainWidth) { //if opened and touchstart over elSub
                     elMainCoordX0New = elMainCoordX0New + (touchstartCoordX - elSubmainWidth);
                 }
                 if (touchmoveCoordX <= elSubmainWidth) {
-                    sidenavbar_main.addEventListener('scroll' ,privent_move_on_scroll);
 
-                    function privent_move_on_scroll(){
-                        stop_slide_move=1;
-                    }
-                    if(stop_slide_move){
+                    if (stop_slide_move) {
                         elMain.style.transform = 'translateX(' + 0 + 'px)';
-                        stop_slide_bg = 1;
-                        setTimeout(function(){
-                            stop_slide_move=0;
-                        },500)
+                        elBg.style.opacity = 0.6;
                     }
-                    else{
+                    else {
                         elMain.style.transform = 'translateX(' + elMainCoordX0New + 'px)';
                     }
                 }
                 var elBgOpacity = touchmoveCoordX / elSubmainWidth;
                 if (elBgOpacity > 0 && elBgOpacity < 1) {
-                    if (stop_slide_bg){
+                    if(stop_slide_bg) {
                         elBg.style.opacity = 0.6;
-                        stop_slide_bg = 0;
                     }
                     else if (elBgOpacity >= opt.opacityBackground) {
                         elBg.style.opacity = opt.opacityBackground;
@@ -196,12 +215,11 @@
                 if ((elSubmainWidth / 5 >= touchendCoordX)) {
                     tssClose();
                 }
-                 else {
-                    
+                else {
                     tssOpen();
                 }
             }
-            else{
+            else {
                 elMain.style.transitionDuration = 0 + 's';
                 elBg.style.transitionDuration = 0 + 's';
                 tssOpen2();
@@ -376,7 +394,7 @@
                 elMain.addEventListener('click', elBgClick, false);
                 //elLabel.addEventListener('click', elLabelClick, false);
             }
-           // window.addEventListener('resize', winOnresizeEngine, false);
+            // window.addEventListener('resize', winOnresizeEngine, false);
         }
         //------------------------------------------------------------------
 
