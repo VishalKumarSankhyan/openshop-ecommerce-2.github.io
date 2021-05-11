@@ -2405,6 +2405,7 @@ hide scroll bar but not functionality
     width: 150px;
     margin-left: 0px;
     position:relative;
+    margin: auto;
 }
 
 .nav_brand_box2 a{
@@ -2421,7 +2422,7 @@ hide scroll bar but not functionality
     bottom: 0;
     left: 0;
     right: 0;
-    margin: auto 0;
+    margin: auto;
     padding: 7px 0!important;
 }
 
