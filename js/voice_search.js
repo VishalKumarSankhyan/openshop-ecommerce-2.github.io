@@ -1,5 +1,7 @@
-const searchFormInput = document.querySelector("#myInputm"); 
+const searchFormInput = document.querySelector("#myInputm");
 const info = document.querySelector("#search_mice_info");
+
+voice_search_btn = document.querySelector('.voice_search_btn');
 mic_voice_btn = document.querySelector('.search_mice_btn');
 
 voice_serch_main_box = document.getElementById("voice_serch_main_box");
@@ -16,10 +18,11 @@ const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogni
 
 if (SpeechRecognition) {
   console.log("Your Browser supports speech Recognition");
+  voice_search_btn.style.display = "block";
 
   const recognition = new SpeechRecognition();
   recognition.continuous = true;
-  //recognition.interimResults = true;
+  recognition.interimResults = true;
 
   function open_voice_search_box() {
     voice_serch_main_box.style.display = "block";
@@ -36,11 +39,18 @@ if (SpeechRecognition) {
   // voicesearch start stop
   function voice_search_start_stop() {
     if (mic_voice_btn.classList.contains('open')) {
-      speechresult = '';
       recognition.stop();
+      speechresult = '';
+      console.log("stope closing")
     }
     else {
-      recognition.start();
+      try {
+        recognition.start();
+      }
+      catch (err) {
+        console.log()
+      }
+
     }
   }
 
@@ -53,46 +63,58 @@ if (SpeechRecognition) {
     mic_voice_btn.classList.add('open');
 
     clearTimeout(resulttimeout);
-    console.log("timeoutclear");
+    //console.log("timeoutclear");
   }
 
 
   recognition.addEventListener("result", resultOfSpeechRecognition); // <=> recognition.onresult = function(event) {...} - Fires when you stop talking
   function resultOfSpeechRecognition(event) {
-    const current = event.resultIndex;
-    const transcript = event.results[current][0].transcript;
-    speechresult = transcript;
+
+    const transcript = Array.from(event.results)
+      .map(result => result[0])
+      .map(result => result.transcript)
+      .join('')
+
     info.innerHTML = transcript;
-    mic_voice_btn.classList.remove('open');
-    recognition.stop();
+    speechresult = transcript;
+  
+    if (event.results[0].isFinal) {
+      info.innerHTML = transcript;
+      speechresult = transcript;
+
+      resulttimeout = setTimeout(function () {
+        searchFormInput.value = transcript;
+        voice_serch_main_box.style.display = "none";
+        voice_serch_sub_box11.style.display = "none";
+        recognition.stop();
+        searchFormInput.focus();
+      }, 1200)
+    }
 
   }
-
 
   recognition.addEventListener("end", endSpeechRecognition); // <=> recognition.onend = function() {...}
   function endSpeechRecognition() {
     console.log("Speech recognition service disconnected");
+    info.innerHTML = "Try again";
+    mic_voice_btn.classList.remove('open');
+
     if (speechresult) {
       info.innerHTML = speechresult;
-      resulttimeout = setTimeout(function () {
-        voice_serch_main_box.style.display = "none";
-        voice_serch_sub_box11.style.display = "none";
-        searchFormInput.value = speechresult;
-        getsearchvaluem();
-        searchFormInput.focus();
-        speechresult = '';
-      }, 1300)
-
+      speechresult = '';
     }
     else {
       info.innerHTML = "Try again";
       mic_voice_btn.classList.remove('open');
       speechresult = '';
+      clearTimeout(resulttimeout);
     }
-    recognition.stop();
   }
+
+
 }
 else {
   console.log("Your Browser does not support speech Recognition");
-  info.innerHTML = "Your Browser does not support Speech Recognition";
+  voice_search_btn.style.display = "none";
+  //info.innerHTML = "Your Browser does not support Speech Recognition";
 }
