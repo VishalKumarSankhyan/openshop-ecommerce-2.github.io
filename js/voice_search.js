@@ -40,8 +40,6 @@ if (SpeechRecognition) {
   function voice_search_start_stop() {
     if (mic_voice_btn.classList.contains('open')) {
       recognition.stop();
-      speechresult = '';
-      console.log("stope closing")
     }
     else {
       try {
@@ -63,7 +61,6 @@ if (SpeechRecognition) {
     mic_voice_btn.classList.add('open');
 
     clearTimeout(resulttimeout);
-    //console.log("timeoutclear");
   }
 
 
@@ -81,23 +78,21 @@ if (SpeechRecognition) {
     if (event.results[0].isFinal) {
       info.innerHTML = transcript;
       speechresult = transcript;
+      mic_voice_btn.classList.remove('open');
+      recognition.stop();
 
       resulttimeout = setTimeout(function () {
         searchFormInput.value = transcript;
         voice_serch_main_box.style.display = "none";
         voice_serch_sub_box11.style.display = "none";
-        recognition.stop();
         searchFormInput.focus();
-      }, 1200)
+      }, 1350)
     }
 
   }
 
   recognition.addEventListener("end", endSpeechRecognition); // <=> recognition.onend = function() {...}
   function endSpeechRecognition() {
-    console.log("Speech recognition service disconnected");
-    info.innerHTML = "Try again";
-    mic_voice_btn.classList.remove('open');
 
     if (speechresult) {
       info.innerHTML = speechresult;
@@ -106,8 +101,6 @@ if (SpeechRecognition) {
     else {
       info.innerHTML = "Try again";
       mic_voice_btn.classList.remove('open');
-      speechresult = '';
-      clearTimeout(resulttimeout);
     }
   }
 
